@@ -88,7 +88,9 @@
             top: 15px;
             z-index: 30;
         }
-
+        #main-header:hover{
+            color: rgb(17, 143, 201);
+        }
         #main-header {
             text-decoration: none;
             color: black;
@@ -117,7 +119,7 @@
             border-bottom: 3px solid transparent;
             border-radius: 7px;
             background: transparent;
-            box-shadow: -2px -2px 30px 1px rgb(153, 124, 153);
+            box-shadow: -2px 1px 1px 1px rgb(153, 124, 153);
             padding: 5px;
             margin-left: 21%;
         }
@@ -179,10 +181,12 @@
             background: #D3D3D3;
             top: 0px;
             float: left;
+            z-index: 1;
         }
 
         #galeria {
             float: left;
+            z-index: 200;
         }
 
         #menus {
@@ -191,6 +195,7 @@
             list-style-type: none;
             height: 420px;
             width: 1254px;
+            z-index: 200;
         }
 
         #menus li a {
@@ -199,18 +204,22 @@
             float: left;
             border-right: 2px solid #fff;
             overflow: hidden;
+            z-index: 200;
         }
 
         #menus li a img {
             border: 0;
+            z-index: 200;
         }
 
         #menus li a:hover {
             background: #eee;
             width: 500px;
+            z-index: 200;
         }
         #imagen-galeria{
             height: 458px;
+            z-index: 2;
         }
         
         #titulo-li{
@@ -296,7 +305,7 @@
         .conte-D {
             height: 360px;
             width: 99%;
-            margin-left: 2px;
+            margin-left: 0px;
             position: relative;
             padding-top: 70px;
             border-bottom: #c8c8c8 solid;
@@ -316,7 +325,7 @@
             height: 280px;
             padding-top: 50px;
             position: absolute;
-            left: 4px;
+            left: -1%;
             top: 4px;
             color: #333333;
         }
@@ -341,7 +350,7 @@
             font-size: 23px;
             color: #4c4c4c;
             text-align: left;
-            margin: 15px 0 0 20%;
+            margin: 15px 0 0 10%;
             xxbackground: red;
         }
 
@@ -422,32 +431,87 @@
         }
         #fixed-cabecera3{
             float: left;
-            padding-left: 40%;
+            padding-left: 20%;
         }
         #fixed-cabecera4{
             float: left;
             padding-left: 2%;
         }
+        #fixed-cabecera5{
+            float: left;
+            padding-left: 2%;
+        }
+        #ico-tel{
+            height: 50px;
+            padding-top: 10px;
+        }
+        #ico-mail{
+            height: 50px;
+            padding-top: 10px;
+        }
+        #ico-nav{
+            height: 50px;
+            padding-top: 10px;
+        }
+        #logo-destacado{
+            position: relative;
+            top: -300px;
+            left: 870px;
+            height: 120px;
+            z-index: 0;
+        }
+        #titulo{
+            text-decoration: none;
+            color: #000
+        }
+        #titulo:hover{
+            color: rgb(17, 143, 201);
+        }
+        #baner-estatico{
+            position: fixed;
+            background: #DE3995;
+            top: 800px;;
+            left: 10px;
+            z-index: 55555;
+        }
+        #imagen-estatico{
+            width: 160px;
+            z-index: 55555;
+            top: 100px;
+            left: 10px;
+        }
+        .titulos:hover{
+            color: rgb(17, 143, 201);
+             
+        }
+        #promo-destacado:hover{
+            color: rgb(201, 17, 26);
+        }
+        
     </style>
 </head>
 
 <body>
     <div id="barra-fixed">
-        <div id="fixed-cabecera1"><p>22@Poblenou</p></div>
+        <div id="fixed-cabecera1"> <a id= "titulo" href="index.html"><p>22@Poblenou</p></a></div> 
         <div id="fixed-cabecera2"><p>Estas en: <br> Poblenou</p></div>
-        <div id="fixed-cabecera3"><p><img src="" alt="">Telefono</p></div>
-        <div id="fixed-cabecera4"><p>Español</p></div>
+        <div id="fixed-cabecera3"><a href="contacto.html"><p><img id="ico-tel" src="image/ico-tel.png" title="684368855"></p></a></div> 
+        <div id="fixed-cabecera4"><a href="contacto.html"><p><img id="ico-mail" src="image/ico-mail.png" title="bar@poblenou.com"></p></a></div>
+        <div id="fixed-cabecera5"> <a href="barescerca.html"><p><img id="ico-nav" src="image/ico-navigate.png" title="Buscar en en el mapa"></p></a></div>
     </div>
     <div id="navegacion">
 
         <p class="nav"><a class="nav-url" href="index.html">Inicio</a></p>
-        <p class="nav"><a class="nav-url" href="restaurant01.html">Restaurantes</a></p>
+        <p class="nav"><a class="nav-url" href="restaurant01.html">Restaurantes cerca</a></p>
         <p class="nav"><a class="nav-url" href="contacto.html">Contacto</a></p>
 
     </div>
     <div id="presentacion">
         <h1 id="intro-pagina">RESERVA GRATIS Y DE FORMA INMEDIATA <br>
-            EN LOS MEJORES RESTAURANTES Miles de restaurantes y ofertas irresistibles</h1>
+            EN LOS MEJORES RESTAURANTES <br> Miles de restaurantes y ofertas irresistibles</h1>
+    </div>
+    <div id="baner-estatico">
+        <p ><img id="imagen-estatico" src="image/descuento.jpg" alt=""></p>
     </div>
 
 
@@ -467,12 +531,12 @@
                         <li><a href="#"><img id="imagen-galeria" src="image/25.jpg" alt="#" title="#" /></a></li>
                         <li><a href="#"><img id="imagen-galeria" src="image/26.jpg" alt="#" title="#" /></a></li>
                         <li><a href="#"><img id="imagen-galeria" src="image/27.jpg" alt="#" title="#" /></a></li>
-                        <li><h1 id="titulo-li">Menu Semanal</h1>
-                            <p id="parrafo-li">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas optio cupiditate architecto, laboriosam ex molestias tenetur sint voluptatem rerum repellat illo enim libero incidunt accusantium, fugit ducimus a ipsa tempore.</p></li>
+                        
                     </ul>
+                    <div><a href="eltioche.html"><p><img id="logo-destacado" src="image/Logo-Tio-Che.png" alt="e" title="Tio Che"></p></a></div>
                 </div>
                 <div id="descripcion-destacado">
-                    <h1>Restaurante</h1>
+                    <h1 id="promo-destacado">Restaurante del mes</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas optio cupiditate architecto, laboriosam ex molestias tenetur sint voluptatem rerum repellat illo enim libero incidunt accusantium, fugit ducimus a ipsa tempore.</p>
                 </div>
             </div>
@@ -558,16 +622,16 @@
                     <h1 class="main-aside">Tipos de comida</h1>
                     <ul class="listas-aside">
                         <li class="lista-li">
-                            <a class="enlaces" href="menu.html">Menu</a>
+                            <a class="enlaces" href="nabibi.html">Menu</a>
                         </li>
                         <li class="lista-li">
-                            <a class="enlaces" href="cafeterias.html">Cafeterias</a>
+                            <a class="enlaces" href="eltioche.html">Cafeterias</a>
                         </li>
                         <li class="lista-li">
-                            <a class="enlaces" href="Tapas.html">Tapas</a>
+                            <a class="enlaces" href="xorus.html">Tapas</a>
                         </li>
                         <li class="lista-li">
-                            <a class="enlaces" href="vegetarianos.html">Vegetarianos</a>
+                            <a class="enlaces" href="petitbangkok.html">Vegetarianos</a>
                         </li>
                     </ul>
                 </section>
@@ -575,16 +639,16 @@
                     <h1 class="main-aside">Origen</h1>
                     <ul class="listas-aside">
                         <li class="lista-li">
-                            <a class="enlaces" href="nacionales.html">Nacionales</a>
+                            <a class="enlaces" href="eltioche.html">Nacionales</a>
                         </li>
                         <li class="lista-li">
-                            <a class="enlaces" href="europeos.html">Europeos</a>
+                            <a class="enlaces" href="xorus.html">Europeos</a>
                         </li>
                         <li class="lista-li">
-                            <a class="enlaces" href="latinos.html">Latinos</a>
+                            <a class="enlaces" href="nabibi.html">Latinos</a>
                         </li>
                         <li class="lista-li">
-                            <a class="enlaces" href="asiaticos.html">Asiaticos</a>
+                            <a class="enlaces" href="petitbangkok.html">Asiaticos</a>
                         </li>
                     </ul>
                 </section>
@@ -605,7 +669,7 @@
             </aside>
         </div>
         <footer id="footer">
-            <div id="footer-text">Derechos Reservados 2019-2020</div>
+            <div id="footer-text"><p>Derechos Reservados 2019-2020</p></div>
         </footer>
     </div>
 </body>
