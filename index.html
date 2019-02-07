@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Poblenou</title>
+
+    <style>
+        ul,
+        ol {
+            list-style: none
+        }
+
+        h1,
+        h1,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code {
+            font-size: 1em;
+        }
+
+        ul,
+        ol,
+        li,
+        h1,
+        h1,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        form,
+        body,
+        html,
+        p,
+        blockquote,
+        fieldset {
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            list-style: none;
+        }
+
+        a img,
+        :link img,
+        :visited img,
+        fieldset {
+            border: none;
+        }
+
+        input[type=submit],
+        input[type=reset],
+        input[type=button] {
+            *filter: chroma(color=#000000);
+        }
+
+        #estructura {
+            xxbackground: linear-gradient(to right, rgba(99, 212, 240, 1) 0%, rgba(66, 200, 237, 1) 41%, rgba(1, 132, 178, 1) 100%);
+            width: 100%;
+            height: 1050px;
+            margin: 0px auto;
+            xxbox-shadow: -2px -2px 30px 1px rgb(153, 124, 153);
+            xxborder: solid blue;
+
+
+        }
+        body{
+            background: #DCDCDC;
+        }
+        header {
+
+            height: 150px;
+            width: 100%;
+            text-align: center;
+            margin-top: 124px;
+            padding-top: 40px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 100px;
+            color: black;
+            font-weight: bold;
+            xxborder: solid red;
+            background-color: #C0C0C0;
+            top: 15px;
+            z-index: 30;
+        }
+
+        #main-header {
+            text-decoration: none;
+            color: black;
+
+        }
+
+        #navegacion {
+            background: #32333a;
+            padding-top: 10px;
+            height: 40px;
+            width: 100%;
+            margin: 5px auto;
+            xxborder: solid violet;
+            position: fixed;
+            top: 65px;
+            z-index: 25;
+        }
+
+        .nav {
+            display: inline-block;
+
+            color: white;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            border-bottom: 3px solid transparent;
+            border-radius: 7px;
+            background: transparent;
+            box-shadow: -2px -2px 30px 1px rgb(153, 124, 153);
+            padding: 5px;
+            margin-left: 21%;
+        }
+
+        .nav-url:link {
+            color: white;
+        }
+
+        .nav-url:visited {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .nav-url:hover {
+            color: rgb(17, 143, 201);
+        }
+
+        #barra-fixed {
+            
+            background-color: #808080;
+            position: fixed;
+            height: 70px;
+            width: 100%;
+            z-index: 25;
+            xxbox-shadow: 1px 1px 1px 1px rgb(165, 164, 165);
+            padding: 0;
+            top: 0px;
+            xxborder: solid rebeccapurple;
+        }
+
+        #presentacion {
+            position: relative;
+            height: 450px;
+            width: 100%;
+            background-image: url("image/cuerpo1.jpeg");
+            background-size: contain;
+
+            color: #000000;
+            top: 125px;
+            xxborder: solid green
+        }
+
+
+        #intro-pagina {
+            text-align: center;
+            font-size: 50px;
+            padding-top: 300px;
+            color: red;
+            
+            text-shadow: 2px 0 0 rgb(97, 95, 95), -2px 0 0 rgb(97, 96, 96), 0 2px 0 rgb(97, 96, 96), 0 -2px 0 rgb(97, 96, 96), 1px 1px rgb(97, 96, 96), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+
+
+        }
+
+        #producto-destacado {
+            height: 460px;
+            width: 100%;
+            background: #D3D3D3;
+            top: 0px;
+            float: left;
+        }
+
+        #galeria {
+            float: left;
+        }
+
+        #menus {
+            padding: 0;
+            margin: 0 auto;
+            list-style-type: none;
+            height: 420px;
+            width: 1254px;
+        }
+
+        #menus li a {
+            width: 120px;
+            height: 458px;
+            float: left;
+            border-right: 2px solid #fff;
+            overflow: hidden;
+        }
+
+        #menus li a img {
+            border: 0;
+        }
+
+        #menus li a:hover {
+            background: #eee;
+            width: 500px;
+        }
+        #imagen-galeria{
+            height: 458px;
+        }
+        
+        #titulo-li{
+            font-size: 50px;
+            padding-top: 10px;
+            padding-left: 900px;
+        }
+        #parrafo-li{
+            font-size: 30px;
+            padding-top: 50px;
+            padding-left: 900px;
+        }
+        #descripcion-destacado{
+            background: #D3D3D3;
+            width: 600px;
+            height: 460px;
+            z-index: 2000;
+            margin-left: 1300px;
+            border-left: solid #32333a
+        }
+        #descripcion-destacado h1{
+            padding-top: 90px;
+            font-size: 70px;
+            padding-left: 20px;
+        }
+        #descripcion-destacado p{
+            padding-top: 50px;
+            font-size: 20px;
+            padding-left: 20px;
+        }
+        #seccion {
+            background: transparent;
+            height: 2180px;
+            width: 100%;
+            margin: 5px auto 5px auto;
+            z-index: 10;
+            xxborder: solid red;
+        }
+
+        #footer {
+            background: transparent;
+            height: 121px;
+            width: 100%;
+            margin: 5px 0 5px 0;
+            xxborder: solid green;
+        }
+
+        #footer-text {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            margin-top: 40px;
+        }
+
+        #contenido {
+            height: 1760px;
+            width: 69.5%;
+            float: left;
+            XXborder: solid black;
+        }
+
+        #lateral {
+            position: absolute;
+            top: 1300px;
+            left: 70%;
+            background: transparent;
+            height: 100%;
+            width: 29.5%;
+            float: right;
+            xxborder: solid violet;
+        }
+
+        .conte-I {
+            height: 360px;
+            width: 99%;
+            margin: 2px;
+            position: relative;
+            padding-top: 70px;
+            border-bottom: #a2a2a2 solid;
+            xxborder: solid blue;
+        }
+
+        .conte-D {
+            height: 360px;
+            width: 99%;
+            margin-left: 2px;
+            position: relative;
+            padding-top: 70px;
+            border-bottom: #c8c8c8 solid;
+        }
+
+        .texto-I {
+            width: 49%;
+            height: 280px;
+            padding-top: 40px;
+            position: absolute;
+            left: 50%;
+            top: 2%;
+        }
+
+        .texto-D {
+            width: 49%;
+            height: 280px;
+            padding-top: 50px;
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            color: #333333;
+        }
+
+        .titulo-I {
+            font-family: serif, Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            text-align: right;
+            color: #333333;
+        }
+
+        .titulo-D {
+            font-family: serif, Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            text-align: left;
+            color: #333333;
+            margin: 10px 0 0 20%;
+        }
+
+        .parrafo-D {
+            font-family: 'Times New Roman', Times, serif, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 23px;
+            color: #4c4c4c;
+            text-align: left;
+            margin: 15px 0 0 20%;
+            xxbackground: red;
+        }
+
+        .parrafo-I {
+            font-family: 'Times New Roman', Times, serif, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 23px;
+            text-align: left;
+            margin-top: 15px;
+            color: #4c4c4c;
+            line-height: 25px;
+        }
+
+
+        .img-redonda-d {
+            width: 280px;
+            height: 280px;
+            border-radius: 140px;
+            margin-left: 15%;
+            box-shadow: 10px 10px 222px -19px rgb(153, 124, 153);
+            border-bottom: solid 1px #999999;
+
+        }
+
+        .img-redonda-i {
+            width: 280px;
+            height: 280px;
+            border-radius: 140px;
+            margin-left: 75%;
+            box-shadow: -3px -2px 40px 1px rgb(153, 124, 153);
+        }
+
+        aside section {
+            xxbackground: green;
+            height: 250px;
+            width: 350px;
+            margin: auto;
+            margin-top: 150px;
+        }
+
+        .listas-aside {
+            margin: 15px 0 0 100px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 25px;
+            xxborder: solid red;
+        }
+
+        .main-aside {
+            margin: 45px 0 0 45px;
+            font-size: 30px;
+        }
+
+        .lista-li {
+            line-height: 40px;
+        }
+
+        .enlaces {
+            text-decoration: none;
+            line-height: 40px;
+            color: #333333;
+        }
+
+        a.titulos {
+            text-decoration: none;
+            color: #333333;
+        }
+        #fixed-cabecera1{
+            float: left;
+            padding-left: 20%;
+            font-size: 50px;
+            font-weight: bold;
+            padding-top: 8px;
+            border-right: solid black;
+        }
+        #fixed-cabecera2{
+            float: left;
+            padding-left: 2%;
+            font-weight: bold;
+        }
+        #fixed-cabecera3{
+            float: left;
+            padding-left: 40%;
+        }
+        #fixed-cabecera4{
+            float: left;
+            padding-left: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="barra-fixed">
+        <div id="fixed-cabecera1"><p>22@Poblenou</p></div>
+        <div id="fixed-cabecera2"><p>Estas en: <br> Poblenou</p></div>
+        <div id="fixed-cabecera3"><p><img src="" alt="">Telefono</p></div>
+        <div id="fixed-cabecera4"><p>Español</p></div>
+    </div>
+    <div id="navegacion">
+
+        <p class="nav"><a class="nav-url" href="index.html">Inicio</a></p>
+        <p class="nav"><a class="nav-url" href="restaurant01.html">Restaurantes</a></p>
+        <p class="nav"><a class="nav-url" href="contacto.html">Contacto</a></p>
+
+    </div>
+    <div id="presentacion">
+        <h1 id="intro-pagina">RESERVA GRATIS Y DE FORMA INMEDIATA <br>
+            EN LOS MEJORES RESTAURANTES Miles de restaurantes y ofertas irresistibles</h1>
+    </div>
+
+
+    <div id="estructura">
+        <header>
+            <a href="index.html" id="main-header">22@POBLENOU</a>
+        </header>
+
+        <div id="seccion">
+            <div id="producto-destacado">
+                <div id="galeria">
+                    <ul id="menus">
+                        <li><a href="#"><img id="imagen-galeria" src="image/21.jpg" alt="#" title="#" /></a></li>
+                        <li><a href="#"><img id="imagen-galeria" src="image/22.jpg" alt="#" title="#" /></a></li>
+                        <li><a href="#"><img id="imagen-galeria" src="image/23.jpg" alt="#" title="#" /></a></li>
+                        <li><a href="#"><img id="imagen-galeria" src="image/24.jpg" alt="#" title="#" /></a></li>
+                        <li><a href="#"><img id="imagen-galeria" src="image/25.jpg" alt="#" title="#" /></a></li>
+                        <li><a href="#"><img id="imagen-galeria" src="image/26.jpg" alt="#" title="#" /></a></li>
+                        <li><a href="#"><img id="imagen-galeria" src="image/27.jpg" alt="#" title="#" /></a></li>
+                        <li><h1 id="titulo-li">Menu Semanal</h1>
+                            <p id="parrafo-li">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas optio cupiditate architecto, laboriosam ex molestias tenetur sint voluptatem rerum repellat illo enim libero incidunt accusantium, fugit ducimus a ipsa tempore.</p></li>
+                    </ul>
+                </div>
+                <div id="descripcion-destacado">
+                    <h1>Restaurante</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas optio cupiditate architecto, laboriosam ex molestias tenetur sint voluptatem rerum repellat illo enim libero incidunt accusantium, fugit ducimus a ipsa tempore.</p>
+                </div>
+            </div>
+            <div id="contenido">
+                <div class="conte-I">
+                    <article class="texto-I">
+                        <h1 class="titulo-I">
+                            <a href="petitbangkok.html" class="titulos">Petit Bangkok</a>
+                        </h1>
+                        <p class="parrafo-I">
+                            Lleva años siendo una dirección fiable cuando quieres hacer ese viaje en pos de delicias <i>tailandesas</i>
+                            . De hecho, si eres un neófito en la materia, disponen de un menú degustación, un ejemplo
+                            clarividente no solo del exotismo inherente a aquella gastronomía sino de lo que hacen en
+                            este acogedor restaurante (dos plantas; lo ideal es la superior cerca del gran ventanal) a
+                            un precio (30€) que apetece. Si ya tienes experiencia en estos seductores sabores,
+                            solamente tendrás que escoger tu filia por el picante entre platos al wok, sopas, entrantes
+                            crujientes...<a class="enlaces-parrafo" href="petitbangkok.html">Seguir leyendo</a>
+                        </p>
+                    </article>
+                    <div class="div-redonda">
+                        <a href="petitbangkok.html"><img src="image/petitbangkok.jpg" alt="imagen" class="img-redonda-d"></a>
+                    </div>
+                </div>
+                <div class="conte-D">
+                    <article class="texto-D">
+                        <h1 class="titulo-D">
+                            <a href="xorus.html" class="titulos">Xorús</a>
+                        </h1>
+                        <p class="parrafo-D">
+                            Estamos situados en la Rambla del Poblenou. Somos un restaurante familiar, especializado en
+                            cocina tradicional casera, catalana y gallega. En Xorús Braseria, todas las recetas están
+                            elaboradas con productos frescos de calidad. El comedor interior es sencillo y acogedor, y
+                            se completa con una zona de barra ideal para degustar nuestras tapas y catar nuestra
+                            selección de vinos. Además, nuestra inmensa y agradable terraza es ideal para todo tipo de
+                            ocasión y os espera todo el año....<a class="enlaces-parrafo" href="xorus.html">Seguir
+                                leyendo</a>
+                        </p>
+                    </article>
+                    <div class="div-redonda">
+                        <a href="xorus.html"><img src="image/xorus.jpg" alt="imagen" class="img-redonda-i"></a>
+                    </div>
+                </div>
+                <div class="conte-I">
+                    <article class="texto-I">
+                        <h1 class="titulo-I">
+                            <a href="eltioche.html" class="titulos">El tío che</a>
+                        </h1>
+                        <p class="parrafo-I">
+                            Si hay una esquina donde cabe el mundo esta es la bienaventurada, alegre y dulce esquina
+                            donde El Tío Che y sus clientes se fusionan día a día para dar esa fisonomía tan de
+                            Poblenou. Durante cien años esta familia que llegó de la Nucía, Alicante se dedicó a dar el
+                            gusto. Primero en el Born, luego en la Barceloneta, y desde la década del cuarenta en el
+                            antiguo Manchester catalán, hoy barrio tecnológico de moda a pasos de la playa....<a class="enlaces-parrafo"
+                                href="eltioche.html">Seguir leyendo</a>
+                        </p>
+                    </article>
+                    <div class="div-redonda">
+                        <a href="eltioche.html"><img src="image/eltioche.jpg" alt="imagen" class="img-redonda-d"></a>
+                    </div>
+                </div>
+                <div class="conte-D">
+                    <article class="texto-D">
+                        <h1 class="titulo-D">
+                            <a href="nabibi.html" class="titulos">Nabibi</a>
+                        </h1>
+                        <p class="parrafo-D">
+                            NABIBI Cocina Vital nace con una clara vocación de aportar salud a grandes y pequeños a
+                            través de la alimentación. Estamos totalmente de acuerdo con la célebre frase “somos lo que
+                            comemos”, y por este motivo en nuestra cocina sólo hay productos naturales, frescos, de
+                            temporada, 100% biológicos y de proximidad. En nuestra cocina no utilizamos ni congelados
+                            ni alimentos procesados, ni tampoco tenemos microondas, todo se cocina al fuego o al horno.
+                            Cocinamos cada día, como antiguamente....<a class="enlaces-parrafo" href="nabibi.html">Seguir
+                                leyendo</a>
+                        </p>
+                    </article>
+                    <div class="div-redonda">
+                        <a href="nabibi.html"><img src="image/nabibbi.jpg" alt="imagen" class="img-redonda-i"></a>
+                    </div>
+                </div>
+            </div>
+            <aside id="lateral">
+                <section>
+                    <h1 class="main-aside">Tipos de comida</h1>
+                    <ul class="listas-aside">
+                        <li class="lista-li">
+                            <a class="enlaces" href="menu.html">Menu</a>
+                        </li>
+                        <li class="lista-li">
+                            <a class="enlaces" href="cafeterias.html">Cafeterias</a>
+                        </li>
+                        <li class="lista-li">
+                            <a class="enlaces" href="Tapas.html">Tapas</a>
+                        </li>
+                        <li class="lista-li">
+                            <a class="enlaces" href="vegetarianos.html">Vegetarianos</a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h1 class="main-aside">Origen</h1>
+                    <ul class="listas-aside">
+                        <li class="lista-li">
+                            <a class="enlaces" href="nacionales.html">Nacionales</a>
+                        </li>
+                        <li class="lista-li">
+                            <a class="enlaces" href="europeos.html">Europeos</a>
+                        </li>
+                        <li class="lista-li">
+                            <a class="enlaces" href="latinos.html">Latinos</a>
+                        </li>
+                        <li class="lista-li">
+                            <a class="enlaces" href="asiaticos.html">Asiaticos</a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h1 class="main-aside">Redes sociales</h1>
+                    <ul class="listas-aside">
+                        <li class="lista-li">
+                            <a class="enlaces" href="http://www.facebook.com" target="_blank">Facebook</a>
+                        </li>
+                        <li class="lista-li">
+                            <a class="enlaces" href="http://www.instagram.com" target="_blank">Instagram</a>
+                        </li>
+                        <li class="lista-li">
+                            <a class="enlaces" href="http://www.twitter.com" target="_blank">Twitter</a>
+                        </li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+        <footer id="footer">
+            <div id="footer-text">Derechos Reservados 2019-2020</div>
+        </footer>
+    </div>
+</body>
+
+</html>

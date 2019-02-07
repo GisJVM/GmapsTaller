@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ruta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    #mapAqui{
+        background: #4c4c4c;
+        height: 1000px;
+        width: 2000px;
+    }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E38eEb5Z13t02OsR45ejvg7wX_1J-Ks&v=3.exp"></script>
+    <script type="text/javascript">
+        
+
+
+function iniciarMap() {
+        var mapOptions = {
+            zoom: 15,
+            center: new google.maps.LatLng(-12.066552043661718, -77.04903674233714)
+            };
+        var map = new google.maps.Map(document.getElementById('mapAqui'), mapOptions);
+        var serviceDir= new google.maps.DirectionsService;
+        var displayDir= new google.maps.DirectionsRenderer;
+        
+        var puntos = [
+            {lat: -12.06050870614133, lng: -77.04957318414012}, {lat: -12.063992035371175, lng: -77.04674077142039}, {lat: -12.070454960063051, lng: -77.04601121056834}, {lat: -12.072364430710431, lng: -77.0423848639802}, {lat: -12.067559253335968, lng: -77.05234122384348}, {lat: -12.064222856793611, lng: -77.0511181365327}
+        ];
+        origen = new google.maps.LatLng(-12.06050870614133, -77.04957318414012);
+        destino = new google.maps.LatLng(-12.064222856793611, -77.0511181365327);
+            
+        displayDir.setMap(map)
+        serviceDir.route({
+            origin: origen,
+            destination: destino,
+            //waypoints: puntos,
+            travelMode: google.maps.TravelMode.WALKING
+        }, function(response, status) {
+            if (status === google.maps.DirectionsStatus.OK){
+                displayDir.setDirections(response);
+            } else {
+                window.alert("la cagaste pe " + status )
+            }
+        });
+
+        }
+        google.maps.event.addDomListener(window,'load', iniciarMap)
+    </script>
+</head>
+<body>
+    <div id="mapAqui"></div>
+</body>
+</html>
