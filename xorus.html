@@ -83,7 +83,7 @@
             font-weight: bold;
             xxborder: solid red;
             background-color: #C0C0C0;
-           
+
         }
 
         #main-header:hover {
@@ -175,9 +175,9 @@
             xxbackground: #0000ff;
             height: 2200px;
             width: 1500px;
-            border: solid black;
+            xxborder: solid black;
             top: -5px;
-            
+
             margin: 0 auto;
 
 
@@ -240,30 +240,111 @@
         .titulos:hover {
             color: rgb(17, 143, 201);
         }
-        #bar-descripcion{
-            border: solid red;
+
+        #bar-descripcion {
+            xxborder: solid red;
             height: 500px;
             width: 100%;
+            background: white;
         }
-        #bar-fotos{
-            border: solid red;
+
+        #bar-fotos {
+            xxborder: solid red;
             height: 500px;
             width: 100%;
+            margin-top: 60px;
+            background: white;
+            position: relative;
         }
-        #bar-recomendaciones{
-            border: solid red;
+
+        #bar-recomendaciones {
+            xxborder: solid red;
             height: 500px;
             width: 100%;
+            margin-top: 60px;
+            background: white;
+            position: relative;
         }
-        #bar-mapa{
-            border: solid red;
+
+        #bar-mapa {
+            xxborder: solid red;
             height: 500px;
             width: 100%;
+            margin-top: 60px;
+            background: white;
         }
-        #bar-contacto{
-            border: solid red;
+
+        #bar-contacto {
+            xxborder: solid red;
             height: 500px;
             width: 100%;
+            margin-top: 60px;
+            background: white;
+        }
+
+        #paralelos1 {
+            width: 50%;
+            height: 500px;
+            float: left;
+            border-right: #000 solid;
+            position: absolute;
+        }
+
+        #paralelos2 {
+            float: left;
+            xxborder: blue solid;
+            position: absolute;
+            left: 760px;
+            height: 500px;
+            width: 49%;
+        }
+
+        #logo-art {
+            height: 200px;
+            margin: 160px 0 0 100px;
+        }
+
+        h2 {
+            font-size: 60px;
+            text-align: center;
+        }
+
+        #parrafo-descrip {
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 20px;
+        }
+
+        .galeria-fotos {
+            height: 248.0px;
+            width: 500px
+        }
+
+        #image-recomendaciones1 {
+            height: 30px;
+            padding-top: 60px;
+            
+        }
+
+        #image-recomendaciones2 {
+            height: 30px;
+            padding-top: 120px;
+            
+        }
+
+        #image-recomendaciones3 {
+            height: 30px;
+            position: absolute;
+            top: 120px;
+            left: 800px;
+        }
+        h3{
+            font-size: 40px;
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+        .parrafo-recomendaciones{
+            padding-left: 40px;
         }
     </style>
 </head>
@@ -298,14 +379,51 @@
         <div id="seccion">
             <div id="contenido">
 
-                <div id = "bar-descripcion"></div>
-                <div id = "bar-fotos"></div>
-                <div id = "bar-recomendaciones"></div>
-                <div id = "bar-mapa"></div>
-                <div id = "bar-contacto"></div>
-                
+                <div id="bar-descripcion">
+                    <div id="paralelos1">
+                        <h2>Xorus</h2>
+                        <p id="parrafo-descrip">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere libero
+                            iste eum quo ut temporibus laboriosam, officia id tenetur dignissimos dolorum molestiae
+                            alias sit? Autem repudiandae aliquid aut illo provident! Lorem, ipsum dolor sit amet
+                            consectetur adipisicing elit. Fugit, numquam iste nihil corrupti explicabo consequatur id.
+                            Ipsum ullam commodi aperiam, similique odit maiores sit laboriosam fugiat voluptatibus
+                            nesciunt harum officia? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere
+                            libero iste eum quo ut temporibus laboriosam, officia id tenetur dignissimos dolorum
+                            molestiae alias sit? Autem repudiandae aliquid aut illo provident! Lorem, ipsum dolor sit
+                            amet consectetur adipisicing elit. Fugit, numquam iste nihil corrupti explicabo consequatur
+                            id. Ipsum ullam commodi aperiam, similique odit maiores sit laboriosam fugiat voluptatibus
+                            nesciunt harum officia?</p>
+                    </div>
+
+                    <div id="paralelos2">
+                        <p><img id="logo-art" src="image/logo-xorus.png" alt=""></p>
+                    </div>
+
+                </div>
+                <div id="bar-fotos">
+                    <p><img class="galeria-fotos" src="image/xorus9.jpg" alt=""><img class="galeria-fotos"
+                            src="image/xorus9.jpg" alt=""><img class="galeria-fotos" src="image/xorus9.jpg" alt="">
+                        <br><img class="galeria-fotos" src="image/xorus9.jpg" alt=""><img class="galeria-fotos"
+                            src="image/xorus9.jpg" alt=""><img class="galeria-fotos" src="image/xorus9.jpg" alt=""> </p>
+                </div>
+                <div id="mapAqui"></div>
+                <div id="bar-recomendaciones">
+                    <h3>Otros detalles</h3>
+                    <p class="parrafo-recomendaciones"><img id="image-recomendaciones1" src="image/ico-tel.png" alt=""> Detalles, Detalles, Detalles,
+                    </p>
+                    <p class="parrafo-recomendaciones"><img id="image-recomendaciones2" src="image/ico-tel.png" alt="">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. <br>
+                        Cumque facere earum dolore perspiciatis assumenda <br>
+                        nemo animi numquam </p>
+                    <p><img id="image-recomendaciones3" src="image/ico-tel.png" alt="">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. <br>
+                        Cumque facere earum dolore perspiciatis assumenda <br>
+                        nemo animi numquam </p>
+                </div>
+                <div id="bar-contacto"></div>
+
             </div>
-            
+
         </div>
         <footer id="footer">
             <div id="footer-text">
