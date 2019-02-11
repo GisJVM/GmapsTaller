@@ -383,7 +383,7 @@
                     serviceDir.route({
                         origin: new google.maps.LatLng(41.3976537, 2.1941345, 17), // el punto de partida de la ruta
                         destination: { placeId: document.getElementById('destino').value }, // el punto final de la ruta, se uso  el place IDde cada lugar, (se puede reemplazar por un elemento LatLng)
-                        travelMode: 'WALKING' // modo de viaje, en este caso es caminando
+                        travelMode: 'TRANSIT' // modo de viaje, en este caso es caminando
                     }, function (response, status) {
                         if (status === 'OK') {
                             displayDir.setDirections(response);

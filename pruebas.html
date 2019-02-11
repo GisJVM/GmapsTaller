@@ -1,43 +1,117 @@
-<style>   
-        .faq ul li {
-            display:block;
-            float:left;
-            padding:5px;
-        }
-        
-        .faq ul li div {
-            display:none;
-        }
-        
-        .faq ul li div:target {
-            display:block;
-        }
-        
-        
-        </style>
-        
-        
-        <div class="faq">
-           <ul>
-           <li><a href="#question1">Question 1</a>   
-           <div id="question1">Answer 1 </div>
-           </li>
-        
-        
-           <li><a href="#question2">Question 2</a>
-           <div id="question2">Answer 2 </div>
-           </li>
-           <li><a href="#question3">Question 3</a>
-           <div id="question3">Answer 3 Answer 3 Answer 3 Answer 3 Answer 3Answer 3 </div>
-           </li>
-           <li><a href="#question4">Question 4</a>
-           <div id="question4">Answer 4 </div>
-           </li>
-           <li><a href="#question5">Question 5</a>
-           <div id="question5">Answer 5 </div>
-           </li>
-           <li><a href="#question6">Question 6</a>
-           <div id="question6">Answer 6 </div>
-           </li>
-           </ul>  
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #mapAqui {
+        background: #4c4c4c;
+        height: 1000px;
+        ;
+    }
+
+    #menu-flotante {
+        position: absolute;
+        top: 300px;
+        left: 1175px;
+        border: solid #4c4c4c;
+        z-index: 5;
+        border: solid 1px #999;
+        background: #fff;
+        padding: 5px;
+        font-size: 25px;
+    }
+</style>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E38eEb5Z13t02OsR45ejvg7wX_1J-Ks&v=3.exp"></script>
+<script type="text/javascript">
+    var marcas = [];
+    var map;
+    function iniciarMapa() {
+        var mapOptions = {
+            zoom: 15,
+            center: new google.maps.LatLng(41.39, 2.19),
+        };
+        map = new google.maps.Map(document.getElementById('mapAqui'), mapOptions);
+        var pantalla = new google.maps.LatLngBounds();
+        var dirService = new google.maps.DirectionsService;
+        var dirDisplay = new google.maps.DirectionsRenderer({
+            preserveViewport: false,
+        })
+        dirDisplay.setMap(map)
+        baresP = [];
+        baresP.push({ lat: 41.39750899675166, lng: 2.19676075789107, bar: 'Leka', id: 'ChIJ8_vN_RajpBIRZl5Iwmowr5c', img: 'image/leka.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 300 27 19', address: 'Badajoz 65', });
+        baresP.push({ lat: 41.39841980177608, lng: 2.1956214190337278, bar: 'Market', id: 'ChIJt7oioxejpBIRyRGWOMn0XaE', img: 'image/market.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 485 45 63', address: 'Badajoz 83', });
+        var infoVentana;
+        function crearMarcas() {
+            for (var i = 0; i < baresP.length; i++) {
+                marcas[i] = new google.maps.Marker({
+                    position: new google.maps.LatLng(baresP[i].lat, baresP[i].lng),
+                    map: map,
+                    title: "bar"
+                });
+                (function (i, marcas) {
+                    google.maps.event.addListener(marcas[i], 'click', function () {
+                        if (!infoVentana) {
+                            infoVentana = new google.maps.InfoWindow();
+                        }
+                        infoVentana.setContent("Hola")
+                        infoVentana.open(map, marcas[i])
+                    });
+
+                })(i, marcas);
+                pantalla.extend(baresP[i])
+            }//acabo el for
+        };
+        map.fitBounds(pantalla)
+        crearMarcas();
+        var opcion, e;
+        var contenedor = document.getElementById('go')
+
+        for (e = 0; e < baresP.length; e++) {
+            opcion = document.createElement('option');
+            opcion.value = baresP[e].id;
+            opcion.text = baresP[e].bar;
+            contenedor.add(opcion);
+            var onCambiarRuta = function(){
+                cambiarRuta(dirService, dirDisplay);
+            };
+            document.getElementById('go').addEventListener('change', onCambiarRuta);
+            function cambiarRuta(dirService, dirDisplay){
+                dirService.route({
+                    origin: new google.maps.LatLng(41.3976537, 2.1941345, 17),
+                    destination: { placeId: document.getElementById('go').value},
+                    travelMode: 'WALKING'
+                }, function(response, status){
+                    if (status === 'OK'){
+                        dirDisplay.setDirections(response);
+
+                    }
+                });
+            }
+        };
+
+    };
+    google.maps.event.addDomListener(window, 'load', iniciarMapa)
+</script>
+
+<body>
+    <div id="mapAqui">
+
+
+    </div>
+    <div id="menu-flotante">
+        <b>Destino</b>
+        <select name="" id="go">
+
+        </select>
+    </div>
+ 
+</body>
+
+
+
+</html>

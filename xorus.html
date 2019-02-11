@@ -148,7 +148,7 @@
 
         #seccion {
             background: transparent;
-            height: 2180px;
+            height: 2730px;
             width: 100%;
             margin: 5px auto 5px auto;
             z-index: 10;
@@ -266,22 +266,6 @@
             position: relative;
         }
 
-        #bar-mapa {
-            xxborder: solid red;
-            height: 500px;
-            width: 100%;
-            margin-top: 60px;
-            background: white;
-        }
-
-        #bar-contacto {
-            xxborder: solid red;
-            height: 500px;
-            width: 100%;
-            margin-top: 60px;
-            background: white;
-        }
-
         #paralelos1 {
             width: 50%;
             height: 500px;
@@ -308,7 +292,12 @@
             font-size: 60px;
             text-align: center;
         }
-
+        h2:hover{
+            color: rgb(17, 143, 201);
+        }
+        h3:hover{
+            color: rgb(17, 143, 201);
+        }
         #parrafo-descrip {
             padding-left: 30px;
             padding-right: 30px;
@@ -323,28 +312,64 @@
         #image-recomendaciones1 {
             height: 30px;
             padding-top: 60px;
-            
+
         }
 
         #image-recomendaciones2 {
             height: 30px;
             padding-top: 120px;
-            
+
         }
 
         #image-recomendaciones3 {
             height: 30px;
-            position: absolute;
-            top: 120px;
-            left: 800px;
+            position: relative;
+            xxtop: 120px;
+            xxleft: 800px;
         }
-        h3{
+
+        h3 {
             font-size: 40px;
             padding-top: 20px;
             padding-left: 20px;
         }
-        .parrafo-recomendaciones{
+
+        .parrafo-recomendaciones {
             padding-left: 40px;
+        }
+
+        #parrafo-recomendaciones2 {
+            position: relative;
+            padding-left: 680px;
+            top: -180px;
+        }
+        #parrafo-recomendaciones3 {
+            position: relative;
+            padding-left: 680px;
+            top: -70px;
+        }
+        #bar-menu{
+            height: 500px;
+            width: 100%;
+            margin-top: 60px;
+            background: white;
+        }
+        #lista-menu{
+            padding-top: 20px;
+            padding-left: 40px;
+            font-size: 20px;
+            
+        }
+        #lista-menu li{
+            font-size: 22px;
+            list-style: square;
+            padding-bottom: 50px;
+        }
+        #mapAqui{
+            height: 500px;
+            width: 100%;
+            margin-top: 60px;
+            background: white;
         }
     </style>
 </head>
@@ -406,21 +431,33 @@
                         <br><img class="galeria-fotos" src="image/xorus9.jpg" alt=""><img class="galeria-fotos"
                             src="image/xorus9.jpg" alt=""><img class="galeria-fotos" src="image/xorus9.jpg" alt=""> </p>
                 </div>
+                <div id="bar-menu">
+                    
+                    <p><h3>Sugerencias del bar:</h3>
+                        <ul id="lista-menu">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquid praesentium atque dignissimos. Tempore, nulla repellendus ipsam sit quibusdam id voluptas, sunt vel consequuntur quis beatae optio iure ullam? Alias?</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquid praesentium atque dignissimos. Tempore, nulla repellendus ipsam sit quibusdam id voluptas, sunt vel consequuntur quis beatae optio iure ullam? Alias?</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquid praesentium atque dignissimos. Tempore, nulla repellendus ipsam sit quibusdam id voluptas, sunt vel consequuntur quis beatae optio iure ullam? Alias?</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquid praesentium atque dignissimos. Tempore, nulla repellendus ipsam sit quibusdam id voluptas, sunt vel consequuntur quis beatae optio iure ullam? Alias?</li>
+                        
+                    </ul></p>
+                </div>
                 <div id="mapAqui"></div>
+                
                 <div id="bar-recomendaciones">
                     <h3>Otros detalles</h3>
-                    <p class="parrafo-recomendaciones"><img id="image-recomendaciones1" src="image/ico-tel.png" alt=""> Detalles, Detalles, Detalles,
+                    <p class="parrafo-recomendaciones"><img id="image-recomendaciones1" src="image/menu-ico.png" alt="">
+                       <b>Menu:</b>  Detalles, Detalles, Detalles,
                     </p>
-                    <p class="parrafo-recomendaciones"><img id="image-recomendaciones2" src="image/ico-tel.png" alt="">Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. <br>
-                        Cumque facere earum dolore perspiciatis assumenda <br>
-                        nemo animi numquam </p>
-                    <p><img id="image-recomendaciones3" src="image/ico-tel.png" alt="">Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. <br>
-                        Cumque facere earum dolore perspiciatis assumenda <br>
-                        nemo animi numquam </p>
+                    <p class="parrafo-recomendaciones"><img id="image-recomendaciones2" src="image/info-icon.jpg"
+                            alt=""> <b>Información:</b>  orem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+                    <p id="parrafo-recomendaciones2"><img id="image-recomendaciones3" src="image/clock.png"
+                            alt=""><b>Horarios:</b> Lunes a Sabado de 09:00 am - 11:00pm </p>
+                    <p id="parrafo-recomendaciones3"><img id="image-recomendaciones3" src="image/telefono.png"
+                            alt=""> <b>Telefono: </b>684368855 </p>
                 </div>
-                <div id="bar-contacto"></div>
+                
 
             </div>
 
