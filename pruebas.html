@@ -1,117 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<style>
-    #mapAqui {
-        background: #4c4c4c;
-        height: 1000px;
-        ;
-    }
+    <meta charset="utf-8">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E38eEb5Z13t02OsR45ejvg7wX_1J-Ks&v=3.exp"></script>
 
-    #menu-flotante {
-        position: absolute;
-        top: 300px;
-        left: 1175px;
-        border: solid #4c4c4c;
-        z-index: 5;
-        border: solid 1px #999;
-        background: #fff;
-        padding: 5px;
-        font-size: 25px;
-    }
-</style>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E38eEb5Z13t02OsR45ejvg7wX_1J-Ks&v=3.exp"></script>
-<script type="text/javascript">
-    var marcas = [];
-    var map;
-    function iniciarMapa() {
-        var mapOptions = {
-            zoom: 15,
-            center: new google.maps.LatLng(41.39, 2.19),
-        };
-        map = new google.maps.Map(document.getElementById('mapAqui'), mapOptions);
-        var pantalla = new google.maps.LatLngBounds();
-        var dirService = new google.maps.DirectionsService;
-        var dirDisplay = new google.maps.DirectionsRenderer({
-            preserveViewport: false,
-        })
-        dirDisplay.setMap(map)
-        baresP = [];
-        baresP.push({ lat: 41.39750899675166, lng: 2.19676075789107, bar: 'Leka', id: 'ChIJ8_vN_RajpBIRZl5Iwmowr5c', img: 'image/leka.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 300 27 19', address: 'Badajoz 65', });
-        baresP.push({ lat: 41.39841980177608, lng: 2.1956214190337278, bar: 'Market', id: 'ChIJt7oioxejpBIRyRGWOMn0XaE', img: 'image/market.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 485 45 63', address: 'Badajoz 83', });
-        var infoVentana;
-        function crearMarcas() {
-            for (var i = 0; i < baresP.length; i++) {
-                marcas[i] = new google.maps.Marker({
-                    position: new google.maps.LatLng(baresP[i].lat, baresP[i].lng),
-                    map: map,
-                    title: "bar"
-                });
-                (function (i, marcas) {
-                    google.maps.event.addListener(marcas[i], 'click', function () {
-                        if (!infoVentana) {
-                            infoVentana = new google.maps.InfoWindow();
-                        }
-                        infoVentana.setContent("Hola")
-                        infoVentana.open(map, marcas[i])
-                    });
-
-                })(i, marcas);
-                pantalla.extend(baresP[i])
-            }//acabo el for
-        };
-        map.fitBounds(pantalla)
-        crearMarcas();
-        var opcion, e;
-        var contenedor = document.getElementById('go')
-
-        for (e = 0; e < baresP.length; e++) {
-            opcion = document.createElement('option');
-            opcion.value = baresP[e].id;
-            opcion.text = baresP[e].bar;
-            contenedor.add(opcion);
-            var onCambiarRuta = function(){
-                cambiarRuta(dirService, dirDisplay);
+    <script type="text/javascript">
+        function iniciarMapa() {
+            var mapOptions = {
+                zoom: 10,
+                center: new google.maps.LatLng(-12, -76)
             };
-            document.getElementById('go').addEventListener('change', onCambiarRuta);
-            function cambiarRuta(dirService, dirDisplay){
-                dirService.route({
-                    origin: new google.maps.LatLng(41.3976537, 2.1941345, 17),
-                    destination: { placeId: document.getElementById('go').value},
-                    travelMode: 'WALKING'
+            var map = new google.maps.Map(document.getElementById('mapAqui'), mapOptions);
+            var serDirection = new google.maps.DirectionsService();
+            var serDisplay = new google.maps.DirectionsRenderer();
+            serDisplay.setMap('map')
+            var marcador = new google.maps.Marker({
+                position: mapOptions.center,
+                map: map,
+            });
+            var ventanaEmergente = new google.maps.InfoWindow({
+                content: '<div id="infoWindow"><div id="info-titulo"><h2>Texto Aqui</h2></div><div id="info-descp"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt minima soluta dolorem voluptatibusnobiscumque quos modi animi repellendus asperiores sit delectus maxime exercitationem, veniam error omnis? Provident, cum sequi.</p> </div> <div id="info-img"> <p><img src="image/xorus.jpg" alt=""></p> </div> <div id="info-cont"> <p> <img class="info-cont-ico" src="image/telefono.png" alt=""> <b></b>684368855 <img class="info-cont-ico"src="image/direccion.png" alt=""> Direccion</p></div><div id="info-map"><p><a href="">Mostrar ruta</a></p></div></div>'
+            });
+            google.maps.event.addListener(marcador, 'click', function () {
+                ventanaEmergente.open(map, marcador)
+            });
+            function mostrarRuta(){
+                serDirection.route({
+                    origin: new google.maps.LatLng(12.5, 76.5),
+                    destination: new new google.maps.LatLng(12.6, 76.6),
+                    travelMode: 'DRIVING'
                 }, function(response, status){
                     if (status === 'OK'){
-                        dirDisplay.setDirections(response);
-
+                        serDisplay.setDirections(response);
                     }
-                });
+                })
             }
+            mostrarRuta();
         };
+        google.maps.event.addDomListener(window, 'load', iniciarMapa)
+    </script>
+    <style>
+        #mapAqui {
+            height: 600px;
+            background: #999999
+        }
 
-    };
-    google.maps.event.addDomListener(window, 'load', iniciarMapa)
-</script>
+        #infoWindow {
+            position: relative;
+            xxbackground: red;
+            xxborder: solid blue;
+            height: 280px;
+            width: 350px;
+            margin: 0;
+
+        }
+
+        .iw-content {
+            border: solid red;
+            height: 290px;
+            width: 350px;
+        }
+
+        .gm-style-iw {
+            background: #DCDCDC;
+            height: 300px;
+            width: 200%;
+            box-shadow: -14px 0px 0px #DCDCDC, -14px 9px 0px #DCDCDC, -14px -8px 0px #DCDCDC, 15px -8px 0px #DCDCDC, 15px 9px 0px #DCDCDC4c
+        }
+
+        #info-titulo {
+            position: absolute;
+            height: 30px;
+            width: 305px;
+            background: #C0C0C0;
+            top: 10px;
+            left: 35px;
+        }
+
+        #info-descp {
+            position: absolute;
+            height: 190px;
+            width: 150px;
+            background: #C0C0C0;
+            top: 45px;
+            left: 35px
+        }
+
+        #info-img {
+            position: absolute;
+            height: 190px;
+            width: 150px;
+            background: chartreuse;
+            top: 45px;
+            left: 190px
+        }
+
+        #info-cont {
+            position: absolute;
+            height: 40px;
+            width: 150px;
+            background: #C0C0C0;
+            top: 240px;
+            left: 35px
+        }
+
+        #info-map {
+            position: absolute;
+            height: 40px;
+            width: 150px;
+            background: #C0C0C0;
+            top: 240px;
+            left: 190px
+        }
+
+        #info-titulo h2 {
+            xxposition: absolute;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            left: 300px;
+        }
+
+        #info-descp p {
+            xxposition: absolute;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            left: 300px;
+            font-size: 13px;
+        }
+
+        #info-img p img {
+            height: 190px;
+            max-width: 100%;
+            max-height: 100%;
+            padding: 0px;
+            margin: 0;
+        }
+
+        #info-img p {
+            position: absolute;
+            top: -13px;
+
+        }
+
+        .info-cont-ico {
+            height: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #info-cont {
+            font-size: 11px;
+            line-height: 5px;
+
+        }
+
+        #info-cont p {
+            position: absolute;
+            top: -2px;
+            left: 6px;
+        }
+
+        #info-map p a {
+            position: absolute;
+            text-decoration: none;
+            color: black;
+            left: 35px;
+            top: 10px;
+        }
+
+        #info-map p a:hover {
+
+            color: red;
+
+        }
+    </style>
+</head>
 
 <body>
-    <div id="mapAqui">
+    <div id="mapAqui"></div>
+
+    
 
 
-    </div>
-    <div id="menu-flotante">
-        <b>Destino</b>
-        <select name="" id="go">
 
-        </select>
-    </div>
- 
 </body>
-
-
 
 </html>
