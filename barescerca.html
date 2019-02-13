@@ -162,7 +162,7 @@
             width: 1500px;
             border: solid black;
             top: -5px;
-            
+
             margin: 0 auto;
 
 
@@ -225,6 +225,7 @@
         .titulos:hover {
             color: rgb(17, 143, 201);
         }
+
         #mapAqui {
             xxmargin: 20px 0 0 20px;
             border: solid black;
@@ -378,14 +379,15 @@
             padding: 5px;
             font-size: 25px;
         }
-        #destino{
+
+        #destino {
             background: #cdcdcd;
-        } 
-        
+        }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E38eEb5Z13t02OsR45ejvg7wX_1J-Ks&v=3.exp"></script>
     <script type="text/javascript">
         var marcas = [];
+        var usarioLoc = [];
         var map;
 
 
@@ -411,12 +413,14 @@
                 // Permite desactivar o activar los markers del sericio de ruta
                 suppressMarkers: false,
                 preserveViewport: true,
+                InfoWindow: 'hola'
+
             });
             //Se agrega el Renderer al mapa
             displayDir.setMap(map);
             // Se crea una variable que contendra una matriz con los datos de los bares. Se deja vacia para luego insertarle datos facilemnte.
             var baresP = [];
-
+            var usarioLoc = [];
             //con .push se inserta información
             baresP.push({ lat: 41.40288966232697, lng: 2.198766893752577, bar: 'Xorus', id: 'ChIJ0UGVLDyjpBIRdNcVCTidgPs', img: 'image/xorus.jpg', descp: 'HolaPhasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem.<br>  Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '603 307 117', address: 'calle granada 90', });
             baresP.push({ lat: 41.3983979113559, lng: 2.204631508368948, bar: 'Blue Bar', id: 'ChIJpa-3z2qjpBIRUW4SwqLY7mk', img: 'image/bluebar.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 280 90 59', address: ' Pallars, 122', });
@@ -462,6 +466,9 @@
                         },*/
 
                     });
+
+
+
                     // Los siguientes eventos 'escuchan' lo que pasa cuando el mouse pasa por los marcadores
                     google.maps.event.addListener(marcas[i], 'mouseover', function () {
                         this.setIcon(luzOver)
@@ -486,7 +493,7 @@
                                 });
                             }
                             //se agrega el contenido html al contenido
-                            infoVent.setContent('<div id="infoWindow"><div id="info-titulo"><h2>'+baresP[i].bar+'</h2></div><div id="info-descp"><p>'+baresP[i].descp+'</p> </div> <div id="info-img"> <p><img src="'+baresP[i].img+'" alt=""></p> </div> <div id="info-cont"> <p> <img class="info-cont-ico" src="image/telefono.png" alt=""> <b></b>'+baresP[i].fono+' <img class="info-cont-ico"src="image/direccion.png" alt="">'+baresP[i].address+'</p></div><div id="info-map"><p><a id ="mostrarRuta" href="">Mostrar ruta</a></p></div></div>')
+                            infoVent.setContent('<div id="infoWindow"><div id="info-titulo"><h2>' + baresP[i].bar + '</h2></div><div id="info-descp"><p>' + baresP[i].descp + '</p> </div> <div id="info-img"> <p><img src="' + baresP[i].img + '" alt=""></p> </div> <div id="info-cont"> <p> <img class="info-cont-ico" src="image/telefono.png" alt=""> <b></b>' + baresP[i].fono + ' <img class="info-cont-ico"src="image/direccion.png" alt="">' + baresP[i].address + '</p></div><div id="info-map"><p><a id ="mostrarRuta" href="">Mostrar ruta</a></p></div></div>')
                             infoVent.open(map, marcas[i])
                         });
                     })(i, marcas);
@@ -495,10 +502,16 @@
                 };//termina el for
             };
             verMarcas();
-
-            function volverMarcasD() {
-                verMarcas(map);
+            var miPosicion = new google.maps.MarkerImage('image/gps-icon.png')
+            function ubicacionUsuario() {
+                marcaUsuario = new google.maps.Marker({
+                    position: new google.maps.LatLng(41.3976537, 2.1941345),
+                    map: map,
+                    title: 'Mi posición',
+                    icon: miPosicion
+                })
             };
+            ubicacionUsuario();
 
             // Es parte del codigo que ajusta el zoom a cada nuevo marcador que se va agregando
             map.fitBounds(extencion);
@@ -506,6 +519,7 @@
                 for (var i = 0; i < marcas.length; i++) {
                     marcas[i].setMap(null)
                 };
+                marcaUsuario.setMap(null)
             };
 
             // Parte del codigo que crea rutas
@@ -528,7 +542,7 @@
 
                 // escucha cuando se cambia de ruta
                 document.getElementById('destino').addEventListener('change', onCambiarRuta);
-                
+
 
                 // se crea el vector de la ruta
                 function mostrarRuta(serviceDir, displayDir) {
@@ -585,18 +599,18 @@
         <div id="seccion">
             <div id="contenido">
 
-                <div id = "mapAqui"></div>
+                <div id="mapAqui"></div>
                 <div id="menu-flotante">
                     <b>Mostrar ruta</b>
                     <select name="" id="destino">
                         <option value="">Elegir bar</option>
-    
+
                     </select>
                 </div>
-                
-                
+
+
             </div>
-            
+
         </div>
         <footer id="footer">
             <div id="footer-text">
