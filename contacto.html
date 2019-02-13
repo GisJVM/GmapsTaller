@@ -83,7 +83,7 @@
             font-weight: bold;
             xxborder: solid red;
             background-color: #C0C0C0;
-           
+
         }
 
         #main-header:hover {
@@ -177,7 +177,7 @@
             width: 1500px;
             border: solid black;
             top: -5px;
-            
+
             margin: 0 auto;
 
 
@@ -240,31 +240,44 @@
         .titulos:hover {
             color: rgb(17, 143, 201);
         }
-        #bar-descripcion{
-            border: solid red;
-            height: 500px;
-            width: 100%;
+
+        #contacto-texto {
+            position: absolute;
+            height: 400px;
+            width: 750px;
+            background: cadetblue;
+            z-index: 20;
         }
-        #bar-fotos{
-            border: solid red;
-            height: 500px;
-            width: 100%;
+        #contacto-texto h2{
+            padding-left: 50px;
+            font-size: 50px;;
         }
-        #bar-recomendaciones{
-            border: solid red;
-            height: 500px;
-            width: 100%;
+        #contacto-texto p{
+            padding: 0px 30px 30px 30px;
+            font-size: 24px;;
         }
-        #bar-mapa{
-            border: solid red;
-            height: 500px;
-            width: 100%;
+        #contacto-imagen {
+            position: absolute;
+            height: 400px;
+            width: 750px;
+            background: rgb(100, 2, 76);
+            z-index: 20;
+            left: 750px;
         }
-        #bar-contacto{
-            border: solid red;
-            height: 500px;
-            width: 100%;
+        #call-center{
+            height: 400px;
+            width: 750px;
         }
+        #contacto-datos {
+            position: absolute;
+            height: 400px;
+            width: 1500px;
+            background: rgb(184, 151, 6);
+            z-index: 20;
+            top: 450px;
+            
+        }
+
     </style>
 </head>
 
@@ -298,14 +311,29 @@
         <div id="seccion">
             <div id="contenido">
 
-                <div id = "bar-descripcion"></div>
-                <div id = "bar-fotos"></div>
-                <div id = "bar-recomendaciones"></div>
-                <div id = "bar-mapa"></div>
-                <div id = "bar-contacto"></div>
+
+                <div id="contacto-texto">
+                    <h2>Para contactarnos</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et vel nam tenetur similique. Fugiat rem corrupti maxime voluptatem aliquid reprehenderit, earum expedita accusantium autem ducimus aperiam, eveniet id inventore nisi? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et vel nam tenetur similique. Fugiat rem corrupti maxime voluptatem aliquid reprehenderit, earum expedita accusantium autem ducimus aperiam, eveniet id inventore nisi? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et vel nam tenetur similique. Fugiat rem corrupti maxime voluptatem aliquid reprehenderit, earum expedita accusantium autem ducimus aperiam, eveniet id inventore nisi?</p>
+                </div>
+                <div id="contacto-imagen"><p><img id="call-center" src="image/call-center.jpeg" alt=""></p></div>
+
+
                 
+                <div id="contacto-datos">
+                    <p>Telefono</p>
+                    <p>Correo</p>
+                    <p>Dirección</p>
+                    <p>facebook</p>
+                    <p>Instagram</p>
+                    <p>WhatsApp</p>
+
+
+                </div>
+
+
             </div>
-            
+
         </div>
         <footer id="footer">
             <div id="footer-text">
