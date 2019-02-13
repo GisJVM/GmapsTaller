@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Poblenou</title>
+    <title>Poblenou-Nabibi</title>
     <style>
         ul,
         ol {
@@ -59,12 +59,9 @@
         }
 
         #estructura {
-            xxbackground: linear-gradient(to right, rgba(99, 212, 240, 1) 0%, rgba(66, 200, 237, 1) 41%, rgba(1, 132, 178, 1) 100%);
             width: 100%;
             height: 1050px;
             margin: 0px auto;
-            xxbox-shadow: -2px -2px 30px 1px rgb(153, 124, 153);
-            xxborder: solid blue;
         }
 
         body {
@@ -81,9 +78,7 @@
             font-size: 100px;
             color: black;
             font-weight: bold;
-            xxborder: solid red;
             background-color: #C0C0C0;
-           
         }
 
         #main-header:hover {
@@ -101,7 +96,6 @@
             height: 40px;
             width: 100%;
             margin: 5px auto;
-            xxborder: solid violet;
             position: fixed;
             top: 65px;
             z-index: 25;
@@ -140,19 +134,16 @@
             height: 70px;
             width: 100%;
             z-index: 25;
-            xxbox-shadow: 1px 1px 1px 1px rgb(165, 164, 165);
             padding: 0;
             top: 0px;
-            xxborder: solid rebeccapurple;
         }
 
         #seccion {
             background: transparent;
-            height: 2180px;
+            height: 2730px;
             width: 100%;
             margin: 5px auto 5px auto;
             z-index: 10;
-            xxborder: solid red;
         }
 
         #footer {
@@ -160,7 +151,6 @@
             height: 121px;
             width: 100%;
             margin: 5px 0 5px 0;
-            xxborder: solid green;
         }
 
         #footer-text {
@@ -172,15 +162,10 @@
 
         #contenido {
             position: relative;
-            xxbackground: #0000ff;
             height: 2200px;
             width: 1500px;
-            border: solid black;
             top: -5px;
-            
             margin: 0 auto;
-
-
         }
 
         #fixed-cabecera1 {
@@ -240,32 +225,353 @@
         .titulos:hover {
             color: rgb(17, 143, 201);
         }
-        #bar-descripcion{
-            border: solid red;
+
+        #bar-descripcion {
             height: 500px;
             width: 100%;
+            background: white;
         }
-        #bar-fotos{
-            border: solid red;
+
+        #bar-fotos {
             height: 500px;
             width: 100%;
+            margin-top: 60px;
+            background: white;
+            position: relative;
         }
-        #bar-recomendaciones{
-            border: solid red;
+
+        #bar-recomendaciones {
             height: 500px;
             width: 100%;
+            margin-top: 60px;
+            background: white;
+            position: relative;
         }
-        #bar-mapa{
-            border: solid red;
+
+        #paralelos1 {
+            width: 50%;
             height: 500px;
-            width: 100%;
+            float: left;
+            border-right: #000 solid;
+            position: absolute;
         }
-        #bar-contacto{
-            border: solid red;
+
+        #paralelos2 {
+            float: left;
+            position: absolute;
+            left: 760px;
+            height: 500px;
+            width: 49%;
+        }
+
+        #logo-art {
+            height: 130px;
+            margin: 160px 0 0 170px;
+        }
+
+        #paralelos1-titulo {
+            font-size: 60px;
+            text-align: center;
+        }
+
+        h2:hover {
+            color: rgb(17, 143, 201);
+        }
+
+        h3:hover {
+            color: rgb(17, 143, 201);
+        }
+
+        #parrafo-descrip {
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 20px;
+        }
+
+        .galeria-fotos {
+            height: 248.0px;
+            width: 500px
+        }
+
+        #image-recomendaciones1 {
+            height: 30px;
+            padding-top: 60px;
+
+        }
+
+        #image-recomendaciones2 {
+            height: 30px;
+            padding-top: 120px;
+
+        }
+
+        #image-recomendaciones3 {
+            height: 30px;
+            position: relative;
+        }
+
+        h3 {
+            font-size: 40px;
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+        p:hover {
+            color: rgb(17, 143, 201);
+        }
+
+        .parrafo-recomendaciones {
+            padding-left: 40px;
+        }
+
+        #parrafo-recomendaciones2 {
+            position: relative;
+            padding-left: 680px;
+            top: -180px;
+        }
+
+        #parrafo-recomendaciones3 {
+            position: relative;
+            padding-left: 680px;
+            top: -70px;
+        }
+
+        #bar-menu {
             height: 500px;
             width: 100%;
+            margin-top: 60px;
+            background: white;
+        }
+
+        #lista-menu {
+            padding-top: 20px;
+            padding-left: 40px;
+            font-size: 20px;
+        }
+
+        #lista-menu li {
+            font-size: 22px;
+            list-style: square;
+            padding-bottom: 50px;
+        }
+
+        #mapAqui {
+            height: 500px;
+            width: 100%;
+            margin-top: 60px;
+            background: white;
+        }
+
+        #infoWindow {
+            position: relative;
+            height: 280px;
+            width: 350px;
+            margin: 0;
+        }
+
+        .iw-content {
+            border: solid red;
+            height: 290px;
+            width: 350px;
+        }
+
+        .gm-style-iw {
+            background: #DCDCDC;
+            height: 300px;
+            width: 200%;
+            box-shadow: -14px 0px 0px #DCDCDC, -14px 9px 0px #DCDCDC, -14px -8px 0px #DCDCDC, 15px -8px 0px #DCDCDC, 15px 9px 0px #DCDCDC4c
+        }
+
+        #info-titulo {
+            position: absolute;
+            height: 30px;
+            width: 305px;
+            background: #C0C0C0;
+            top: 10px;
+            left: 35px;
+        }
+
+        #info-descp {
+            position: absolute;
+            height: 190px;
+            width: 150px;
+            background: #C0C0C0;
+            top: 45px;
+            left: 35px
+        }
+
+        #info-img {
+            position: absolute;
+            height: 190px;
+            width: 150px;
+            background: chartreuse;
+            top: 45px;
+            left: 190px
+        }
+
+        #info-cont {
+            position: absolute;
+            height: 40px;
+            width: 150px;
+            background: #C0C0C0;
+            top: 240px;
+            left: 35px
+        }
+
+        #info-map {
+            position: absolute;
+            height: 40px;
+            width: 150px;
+            background: #C0C0C0;
+            top: 240px;
+            left: 190px
+        }
+
+        #info-titulo-h2 {
+            padding-top: 3px;
+            margin: 0;
+            text-align: center;
+            top: 3px;
+            left: 90px;
+        }
+
+        #info-descp p {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            top: 10px;
+            font-size: 13px;
+        }
+
+        #info-img p img {
+            height: 190px;
+            max-width: 100%;
+            max-height: 100%;
+            padding: 0px;
+            margin: 0;
+        }
+
+        #info-img p {
+            position: absolute;
+            top: 0px;
+
+        }
+
+        .info-cont-ico {
+            height: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #info-cont {
+            font-size: 11px;
+            line-height: 5px;
+
+        }
+
+        #info-cont p {
+            position: absolute;
+            top: 5px;
+            left: 6px;
+        }
+
+        #info-map p a {
+            position: absolute;
+            text-decoration: none;
+            color: black;
+            left: 35px;
+            top: 10px;
+        }
+
+        #info-map p a:hover {
+            color: red;
         }
     </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E38eEb5Z13t02OsR45ejvg7wX_1J-Ks&v=3.exp"></script>
+    <script type="text/javascript">
+        var marcas = [];
+        var map;
+
+
+        function iniciarMap() {
+            var optionMap = {
+                zoom: 16,
+                center: new google.maps.LatLng(41.400050872923345, 2.2028905449215017),
+                //En esta linea se quitan los elementos que pueden hacer ruido en google maps
+                styles: [{
+                    "featureType": "poi",
+                    "stylers": [
+                        { "visibility": "off" }
+                    ]
+                }]
+            }
+            map = new google.maps.Map(document.getElementById('mapAqui'), optionMap);
+            // Esta linea adapta el zoom segun los marcadores que se van añadiendo
+
+            // Se crea una variable que contendra una matriz con los datos de los bares. Se deja vacia para luego insertarle datos facilemnte.
+            var baresP = [];
+
+            //con .push se inserta información
+            baresP.push({ lat: 41.400050872923345, lng: 2.2028905449215017, bar: 'El Tío Ché', id: 'ChIJxxFIXhWjpBIRv6GISCWyg3k', img: 'image/tioche.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 485 45 63', address: 'Roc boronat 70', });
+
+
+            // Las tres variables siguientes, permiten darle un efecto dinamico a los markers e interaccion con el usuario 
+            var luz = new google.maps.MarkerImage('image/icoVioleta.png')
+            var luzOver = new google.maps.MarkerImage('image/icoPlomo.png')
+            var luzClick = new google.maps.MarkerImage('image/icoAzul.png')
+            // se declara la variable infoVent que contendra el infowindow
+            var infoVent;
+            //Se crea los markers pasando por cada elemento de la matriz de bares
+            function verMarcas() {
+                for (var i = 0; i < baresP.length; i++) {
+                    marcas[i] = new google.maps.Marker({
+                        position: new google.maps.LatLng(baresP[i].lat, baresP[i].lng),
+                        map: map,
+                        title: "hola",
+                        icon: luz,
+                        animation: google.maps.Animation.DROP,
+                        
+                    });
+                    // Los siguientes eventos 'escuchan' lo que pasa cuando el mouse pasa por los marcadores
+                    google.maps.event.addListener(marcas[i], 'mouseover', function () {
+                        this.setIcon(luzOver)
+                    });
+                    google.maps.event.addListener(marcas[i], 'mouseout', function () {
+                        this.setIcon(luz)
+                    });
+                    google.maps.event.addListener(marcas[i], 'mousedown', function () {
+                        this.setIcon(luzClick)
+                    });
+                    google.maps.event.addListener(marcas[i], 'mouseup', function () {
+                        this.setIcon(luz)
+                    });
+
+                    // se crea una funcion que escuchara cuando se haga click en el marker, y devolvera la ventana de infowindow
+                    (function (i, marcas) {
+                        google.maps.event.addListener(marcas[i], 'click', function () {
+                            // el simbolo ! comprueba si existe la variable
+                            if (!infoVent) {
+                                infoVent = new google.maps.InfoWindow();
+                            }
+                            //se agrega el contenido html al contenido
+                            infoVent.setContent('<div id="infoWindow"><div id="info-titulo"><h2 id="info-titulo-h2" >' + baresP[i].bar + '</h2></div><div id="info-descp"><p>' + baresP[i].descp + '</p> </div> <div id="info-img"> <p><img src="' + baresP[i].img + '" alt=""></p> </div> <div id="info-cont"> <p> <img class="info-cont-ico" src="image/telefono.png" alt=""> <b></b>' + baresP[i].fono + ' <img class="info-cont-ico"src="image/direccion.png" alt="">' + baresP[i].address + '</p></div><div id="info-map"><p><a id ="mostrarRuta" href="">Mostrar ruta</a></p></div></div>')
+                            infoVent.open(map, marcas[i])
+                        });
+                    })(i, marcas);
+                    extencion.extend(baresP[i])
+
+                };//termina el for
+            };
+            verMarcas();
+
+            function volverMarcasD() {
+                verMarcas(map);
+            };
+
+        };
+
+        google.maps.event.addDomListener(window, 'load', iniciarMap)
+    </script>
 </head>
 
 <body>
@@ -298,14 +604,74 @@
         <div id="seccion">
             <div id="contenido">
 
-                <div id = "bar-descripcion"></div>
-                <div id = "bar-fotos"></div>
-                <div id = "bar-recomendaciones"></div>
-                <div id = "bar-mapa"></div>
-                <div id = "bar-contacto"></div>
-                
+                <div id="bar-descripcion">
+                    <div id="paralelos1">
+                        <h2 id="paralelos1-titulo">El Tio Che</h2>
+                        <p id="parrafo-descrip">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere libero
+                            iste eum quo ut temporibus laboriosam, officia id tenetur dignissimos dolorum molestiae
+                            alias sit? Autem repudiandae aliquid aut illo provident! Lorem, ipsum dolor sit amet
+                            consectetur adipisicing elit. Fugit, numquam iste nihil corrupti explicabo consequatur id.
+                            Ipsum ullam commodi aperiam, similique odit maiores sit laboriosam fugiat voluptatibus
+                            nesciunt harum officia? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere
+                            libero iste eum quo ut temporibus laboriosam, officia id tenetur dignissimos dolorum
+                            molestiae alias sit? Autem repudiandae aliquid aut illo provident! Lorem, ipsum dolor sit
+                            amet consectetur adipisicing elit. Fugit, numquam iste nihil corrupti explicabo consequatur
+                            id. Ipsum ullam commodi aperiam, similique odit maiores sit laboriosam fugiat voluptatibus
+                            nesciunt harum officia?</p>
+                    </div>
+
+                    <div id="paralelos2">
+                        <p><img id="logo-art" src="image/eltioche-logo.jpg" alt=""></p>
+                    </div>
+
+                </div>
+                <div id="bar-fotos">
+                    <p><img class="galeria-fotos" src="image/eltioche-1.jpg" alt=""><img class="galeria-fotos"
+                            src="image/eltioche-2.jpg" alt=""><img class="galeria-fotos" src="image/eltioche-3.jpg" alt="">
+                        <br><img class="galeria-fotos" src="image/eltioche-4.jpg" alt=""><img class="galeria-fotos"
+                            src="image/eltioche-5.jpg" alt=""><img class="galeria-fotos" src="image/eltioche-6.jpg" alt=""> </p>
+                </div>
+                <div id="bar-menu">
+
+                    <p>
+                        <h3>Sugerencias del bar:</h3>
+                        <ul id="lista-menu">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquid praesentium
+                                atque dignissimos. Tempore, nulla repellendus ipsam sit quibusdam id voluptas, sunt vel
+                                consequuntur quis beatae optio iure ullam? Alias?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquid praesentium
+                                atque dignissimos. Tempore, nulla repellendus ipsam sit quibusdam id voluptas, sunt vel
+                                consequuntur quis beatae optio iure ullam? Alias?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquid praesentium
+                                atque dignissimos. Tempore, nulla repellendus ipsam sit quibusdam id voluptas, sunt vel
+                                consequuntur quis beatae optio iure ullam? Alias?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquid praesentium
+                                atque dignissimos. Tempore, nulla repellendus ipsam sit quibusdam id voluptas, sunt vel
+                                consequuntur quis beatae optio iure ullam? Alias?</li>
+
+                        </ul>
+                    </p>
+                </div>
+                <div id="mapAqui"></div>
+
+                <div id="bar-recomendaciones">
+                    <h3>Otros detalles</h3>
+                    <p class="parrafo-recomendaciones"><img id="image-recomendaciones1" src="image/menu-ico.png" alt="">
+                        <b>Menu:</b> Detalles, Detalles, Detalles,
+                    </p>
+                    <p class="parrafo-recomendaciones"><img id="image-recomendaciones2" src="image/info-icon.jpg"
+                            alt=""> <b>Información:</b> orem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+                    <p id="parrafo-recomendaciones2"><img id="image-recomendaciones3" src="image/clock.png"
+                            alt=""><b>Horarios:</b> Lunes a Sabado de 02:00 pm - 11:00pm </p>
+                    <p id="parrafo-recomendaciones2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Domingo de 07:00 pm - 11:00pm </p>
+                    <p id="parrafo-recomendaciones3"><img id="image-recomendaciones3" src="image/telefono.png" alt="">
+                        <b>Telefono: </b>684368855 </p>
+                </div>
+
+
             </div>
-            
+
         </div>
         <footer id="footer">
             <div id="footer-text">

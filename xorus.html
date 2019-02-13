@@ -225,6 +225,9 @@
         .titulos:hover {
             color: rgb(17, 143, 201);
         }
+        p:hover {
+            color: rgb(17, 143, 201);
+        }
 
         #bar-descripcion {
             height: 500px;
@@ -509,7 +512,7 @@
             var baresP = [];
 
             //con .push se inserta información
-            baresP.push({ lat: 41.40288966232697, lng: 2.198766893752577, bar: 'Xorus', id: 'ChIJ0UGVLDyjpBIRdNcVCTidgPs', img: 'image/xorus.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem.<br>  Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '603 307 117', address: 'calle granada 90', });
+            baresP.push({ lat: 41.40288966232697, lng: 2.198766893752577, bar: 'Xorus', id: 'ChIJ0UGVLDyjpBIRdNcVCTidgPs', img: 'image/xorus9.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem.<br>  Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '603 307 117', address: 'calle granada 90', });
 
 
             // Las tres variables siguientes, permiten darle un efecto dinamico a los markers e interaccion con el usuario 
@@ -527,13 +530,7 @@
                         title: "hola",
                         icon: luz,
                         animation: google.maps.Animation.DROP,
-                        /*label: {
-                            color: '#0000ff',
-                            text: baresP[i].bar,
-                            fontSize: '20px',
-                            fontWeight: '20px',
-                        },*/
-
+                        
                     });
                     // Los siguientes eventos 'escuchan' lo que pasa cuando el mouse pasa por los marcadores
                     google.maps.event.addListener(marcas[i], 'mouseover', function () {
@@ -570,12 +567,6 @@
             function volverMarcasD() {
                 verMarcas(map);
             };
-
-
-
-            // Parte del codigo que crea rutas
-
-
         };
 
         google.maps.event.addDomListener(window, 'load', iniciarMap)
@@ -634,10 +625,10 @@
 
                 </div>
                 <div id="bar-fotos">
-                    <p><img class="galeria-fotos" src="image/xorus9.jpg" alt=""><img class="galeria-fotos"
-                            src="image/xorus9.jpg" alt=""><img class="galeria-fotos" src="image/xorus9.jpg" alt="">
+                    <p><img class="galeria-fotos" src="image/xorus6.jpg" alt=""><img class="galeria-fotos"
+                            src="image/xorus7.jpg" alt=""><img class="galeria-fotos" src="image/xorus8.jpg" alt="">
                         <br><img class="galeria-fotos" src="image/xorus9.jpg" alt=""><img class="galeria-fotos"
-                            src="image/xorus9.jpg" alt=""><img class="galeria-fotos" src="image/xorus9.jpg" alt=""> </p>
+                            src="image/xorus.jpg" alt=""><img class="galeria-fotos" src="image/xorus-1.png" alt=""> </p>
                 </div>
                 <div id="bar-menu">
 
