@@ -392,6 +392,7 @@
         .gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece {
             background: red;
         }
+
         #info-titulo {
             position: absolute;
             height: 30px;
@@ -465,7 +466,6 @@
         #info-img p {
             position: absolute;
             top: 0px;
-
         }
 
         .info-cont-ico {
@@ -477,7 +477,6 @@
         #info-cont {
             font-size: 11px;
             line-height: 5px;
-
         }
 
         #info-cont p {
@@ -524,8 +523,6 @@
 
             //con .push se inserta información
             baresP.push({ lat: 41.40288966232697, lng: 2.198766893752577, bar: 'Xorus', id: 'ChIJ0UGVLDyjpBIRdNcVCTidgPs', img: 'image/xorus9.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem.<br>  Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '603 307 117', address: 'calle granada 90', });
-
-
             // Las tres variables siguientes, permiten darle un efecto dinamico a los markers e interaccion con el usuario 
             var luz = new google.maps.MarkerImage('image/icoVioleta.png')
             var luzOver = new google.maps.MarkerImage('image/icoPlomo.png')
@@ -541,8 +538,7 @@
                         title: "hola",
                         icon: luz,
                         animation: google.maps.Animation.DROP,
-                        
-                    });
+                                            });
                     // Los siguientes eventos 'escuchan' lo que pasa cuando el mouse pasa por los marcadores
                     google.maps.event.addListener(marcas[i], 'mouseover', function () {
                         this.setIcon(luzOver)

@@ -296,13 +296,11 @@
         #image-recomendaciones1 {
             height: 30px;
             padding-top: 60px;
-
         }
 
         #image-recomendaciones2 {
             height: 30px;
             padding-top: 120px;
-
         }
 
         #image-recomendaciones3 {
@@ -520,15 +518,10 @@
                 }]
             }
             map = new google.maps.Map(document.getElementById('mapAqui'), optionMap);
-            // Esta linea adapta el zoom segun los marcadores que se van añadiendo
-
             // Se crea una variable que contendra una matriz con los datos de los bares. Se deja vacia para luego insertarle datos facilemnte.
             var baresP = [];
-
             //con .push se inserta información
             baresP.push({ lat: 41.40196612959878, lng: 2.2022169828414917, bar: 'Nabibi Vital Cooking', id: 'ChIJ__Rhuj-jpBIR7ezEFfV4OiM', img: 'image/nabibi.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: ' 931 79 17 57', address: 'Marià Aguiló 61 ', });
-
-
             // Las tres variables siguientes, permiten darle un efecto dinamico a los markers e interaccion con el usuario 
             var luz = new google.maps.MarkerImage('image/icoVioleta.png')
             var luzOver = new google.maps.MarkerImage('image/icoPlomo.png')
@@ -544,7 +537,6 @@
                         title: "hola",
                         icon: luz,
                         animation: google.maps.Animation.DROP,
-
                     });
                     // Los siguientes eventos 'escuchan' lo que pasa cuando el mouse pasa por los marcadores
                     google.maps.event.addListener(marcas[i], 'mouseover', function () {
@@ -559,7 +551,6 @@
                     google.maps.event.addListener(marcas[i], 'mouseup', function () {
                         this.setIcon(luz)
                     });
-
                     // se crea una funcion que escuchara cuando se haga click en el marker, y devolvera la ventana de infowindow
                     (function (i, marcas) {
                         google.maps.event.addListener(marcas[i], 'click', function () {
@@ -577,17 +568,13 @@
                 };//termina el for
             };
             verMarcas();
-
             function volverMarcasD() {
                 verMarcas(map);
             };
-
         };
-
         google.maps.event.addDomListener(window, 'load', iniciarMap)
     </script>
 </head>
-
 <body>
     <div id="barra-fixed">
         <div id="fixed-cabecera1"> <a id="titulo" href="index.html">
@@ -617,7 +604,6 @@
         </header>
         <div id="seccion">
             <div id="contenido">
-
                 <div id="bar-descripcion">
                     <div id="paralelos1">
                         <h2 id="paralelos1-titulo">Nabibi Vital Cooking</h2>
@@ -633,11 +619,9 @@
                             id. Ipsum ullam commodi aperiam, similique odit maiores sit laboriosam fugiat voluptatibus
                             nesciunt harum officia?</p>
                     </div>
-
                     <div id="paralelos2">
                         <p><img id="logo-art" src="image/nabibi-logo.png" alt=""></p>
                     </div>
-
                 </div>
                 <div id="bar-fotos">
                     <p><img class="galeria-fotos" src="image/nabibbi.jpg" alt=""><img class="galeria-fotos"
@@ -647,7 +631,6 @@
                     </p>
                 </div>
                 <div id="bar-menu">
-
                     <p>
                         <h3>Sugerencias del bar:</h3>
                         <ul id="lista-menu">
@@ -663,7 +646,6 @@
                             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquid praesentium
                                 atque dignissimos. Tempore, nulla repellendus ipsam sit quibusdam id voluptas, sunt vel
                                 consequuntur quis beatae optio iure ullam? Alias?</li>
-
                         </ul>
                     </p>
                 </div>
@@ -676,7 +658,6 @@
                     </p>
                     <p class="parrafo-recomendaciones"><img id="image-recomendaciones2" src="image/info-icon.jpg"
                             alt=""> <b>Información:</b> orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
                     <p id="parrafo-recomendaciones2"><img id="image-recomendaciones3" src="image/clock.png"
                             alt=""><b>Horarios:</b> Lunes a Sabado de 09:00 am - 11:00pm </p>
                     <p id="parrafo-recomendaciones2">
@@ -685,10 +666,7 @@
                     <p id="parrafo-recomendaciones3"><img id="image-recomendaciones3" src="image/telefono.png" alt="">
                         <b>Telefono: </b>684368855 </p>
                 </div>
-
-
             </div>
-
         </div>
         <footer id="footer">
             <div id="footer-text">
@@ -697,5 +675,4 @@
         </footer>
     </div>
 </body>
-
 </html>

@@ -367,33 +367,9 @@
             width: 360px;
             margin: 0;
         }
+
         .iw-content {
             xxborder: solid red;
-            height: 290px;
-            width: 350px;
-        }
-
-
-        .gm-style .gm-style-iw-c {
-            position: absolute;
-            box-sizing: border-box;
-            overflow: hidden;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -100%);
-            background-color: red;
-            border-radius: 8px;
-            padding: 12px;
-            box-shadow: 0 2px 7px 1px red;
-        }
-
-        .gm-style .gm-style-iw-d::-webkit-scrollbar-track,
-        .gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece {
-            background: red;
-        }
-
-        .iw-content {
-            border: solid red;
             height: 290px;
             width: 350px;
         }
@@ -501,7 +477,6 @@
         #info-cont {
             font-size: 11px;
             line-height: 5px;
-
         }
 
         #info-cont p {
@@ -526,8 +501,6 @@
     <script type="text/javascript">
         var marcas = [];
         var map;
-
-
         function iniciarMap() {
             var optionMap = {
                 zoom: 16,
@@ -541,15 +514,10 @@
                 }]
             }
             map = new google.maps.Map(document.getElementById('mapAqui'), optionMap);
-            // Esta linea adapta el zoom segun los marcadores que se van añadiendo
-
             // Se crea una variable que contendra una matriz con los datos de los bares. Se deja vacia para luego insertarle datos facilemnte.
             var baresP = [];
-
             //con .push se inserta información
             baresP.push({ lat: 41.39972046588015, lng: 2.197960789995136, bar: 'Koh Barcelona', id: 'ChIJ_Vo6GBajpBIRh3pxFDRwwHE', img: 'image/koh.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 300 27 19', address: 'c/ Pujades 133', });
-
-
             // Las tres variables siguientes, permiten darle un efecto dinamico a los markers e interaccion con el usuario 
             var luz = new google.maps.MarkerImage('image/icoVioleta.png')
             var luzOver = new google.maps.MarkerImage('image/icoPlomo.png')
@@ -565,7 +533,6 @@
                         title: "hola",
                         icon: luz,
                         animation: google.maps.Animation.DROP,
-                        
                     });
                     // Los siguientes eventos 'escuchan' lo que pasa cuando el mouse pasa por los marcadores
                     google.maps.event.addListener(marcas[i], 'mouseover', function () {
@@ -580,7 +547,6 @@
                     google.maps.event.addListener(marcas[i], 'mouseup', function () {
                         this.setIcon(luz)
                     });
-
                     // se crea una funcion que escuchara cuando se haga click en el marker, y devolvera la ventana de infowindow
                     (function (i, marcas) {
                         google.maps.event.addListener(marcas[i], 'click', function () {
@@ -594,15 +560,12 @@
                         });
                     })(i, marcas);
                     extencion.extend(baresP[i])
-
                 };//termina el for
             };
             verMarcas();
-
             function volverMarcasD() {
                 verMarcas(map);
             };
-
         };
 
         google.maps.event.addDomListener(window, 'load', iniciarMap)
@@ -638,7 +601,6 @@
         </header>
         <div id="seccion">
             <div id="contenido">
-
                 <div id="bar-descripcion">
                     <div id="paralelos1">
                         <h2 id="paralelos1-titulo">Koh Barcelona</h2>
@@ -654,11 +616,9 @@
                             id. Ipsum ullam commodi aperiam, similique odit maiores sit laboriosam fugiat voluptatibus
                             nesciunt harum officia?</p>
                     </div>
-
                     <div id="paralelos2">
                         <p><img id="logo-art" src="image/koh-logo.jpg" alt=""></p>
                     </div>
-
                 </div>
                 <div id="bar-fotos">
                     <p><img class="galeria-fotos" src="image/koh-1.jpg" alt=""><img class="galeria-fotos"
@@ -667,7 +627,6 @@
                             src="image/koh-5.jpg" alt=""><img class="galeria-fotos" src="image/koh-6.jpg" alt=""> </p>
                 </div>
                 <div id="bar-menu">
-
                     <p>
                         <h3>Sugerencias del bar:</h3>
                         <ul id="lista-menu">
@@ -683,12 +642,10 @@
                             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquid praesentium
                                 atque dignissimos. Tempore, nulla repellendus ipsam sit quibusdam id voluptas, sunt vel
                                 consequuntur quis beatae optio iure ullam? Alias?</li>
-
                         </ul>
                     </p>
                 </div>
                 <div id="mapAqui"></div>
-
                 <div id="bar-recomendaciones">
                     <h3>Otros detalles</h3>
                     <p class="parrafo-recomendaciones"><img id="image-recomendaciones1" src="image/menu-ico.png" alt="">
@@ -696,17 +653,13 @@
                     </p>
                     <p class="parrafo-recomendaciones"><img id="image-recomendaciones2" src="image/info-icon.jpg"
                             alt=""> <b>Información:</b> orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
                     <p id="parrafo-recomendaciones2"><img id="image-recomendaciones3" src="image/clock.png"
                             alt=""><b>Horarios:</b> Lunes a Sabado de 02:00 pm - 11:00pm </p>
                     <p id="parrafo-recomendaciones2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Domingo de 07:00 pm - 11:00pm </p>
                     <p id="parrafo-recomendaciones3"><img id="image-recomendaciones3" src="image/telefono.png" alt="">
                         <b>Telefono: </b>684368855 </p>
                 </div>
-
-
             </div>
-
         </div>
         <footer id="footer">
             <div id="footer-text">
