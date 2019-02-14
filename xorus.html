@@ -364,7 +364,7 @@
         #infoWindow {
             position: relative;
             height: 280px;
-            width: 350px;
+            width: 360px;
             margin: 0;
         }
 
@@ -374,13 +374,24 @@
             width: 350px;
         }
 
-        .gm-style-iw {
-            background: #DCDCDC;
-            height: 300px;
-            width: 200%;
-            box-shadow: -14px 0px 0px #DCDCDC, -14px 9px 0px #DCDCDC, -14px -8px 0px #DCDCDC, 15px -8px 0px #DCDCDC, 15px 9px 0px #DCDCDC4c
+        
+        .gm-style .gm-style-iw-c {
+            position: absolute;
+            box-sizing: border-box;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -100%);
+            background-color: red;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 20px 7px 1px red;
         }
 
+        .gm-style .gm-style-iw-d::-webkit-scrollbar-track,
+        .gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece {
+            background: red;
+        }
         #info-titulo {
             position: absolute;
             height: 30px;
@@ -593,7 +604,7 @@
     </div>
     <div id="navegacion">
         <p class="nav"><a class="nav-url" href="index.html">Inicio</a></p>
-        <p class="nav"><a class="nav-url" href="restaurant01.html">Restaurantes cerca</a></p>
+        <p class="nav"><a class="nav-url" href="barescerca.html">Restaurantes cerca</a></p>
         <p class="nav"><a class="nav-url" href="contacto.html">Contacto</a></p>
     </div>
     <div id="estructura">

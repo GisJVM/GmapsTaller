@@ -61,7 +61,7 @@
         #estructura {
             xxbackground: linear-gradient(to right, rgba(99, 212, 240, 1) 0%, rgba(66, 200, 237, 1) 41%, rgba(1, 132, 178, 1) 100%);
             width: 100%;
-            height: 1050px;
+            height: 1170px;
             margin: 0px auto;
             xxbox-shadow: -2px -2px 30px 1px rgb(153, 124, 153);
             xxborder: solid blue;
@@ -148,7 +148,7 @@
 
         #seccion {
             background: transparent;
-            height: 2180px;
+            height: 850px;
             width: 100%;
             margin: 5px auto 5px auto;
             z-index: 10;
@@ -173,9 +173,9 @@
         #contenido {
             position: relative;
             xxbackground: #0000ff;
-            height: 2200px;
+            height: 860px;
             width: 1500px;
-            border: solid black;
+            xxborder: solid black;
             top: -5px;
 
             margin: 0 auto;
@@ -277,7 +277,47 @@
             top: 450px;
             
         }
-
+        #contacto-datos p img{
+            height: 50px;
+        }
+        #contact-tel{
+            position: absolute;
+            top: 50px;
+            left: 200px;
+        }
+        #contact-mail{
+            position: absolute;
+            top: 150px;
+            left: 200px;
+        }
+        #contact-direccion{
+            position: absolute;
+            top: 250px;
+            left: 200px;
+        }
+        #contact-face{
+            position: absolute;
+            top: 50px;
+            left: 850px;
+        }
+        #contact-insta{
+            position: absolute;
+            top: 150px;
+            left: 850px;
+        }
+        #contact-what{
+            position: absolute;
+            top: 250px;
+            left: 850px;
+        }
+        #contacto-datos p{
+            position: absolute;
+            font-size: 25px; 
+        }
+        #contacto-datos p a{
+            text-decoration: none;
+            color: #000;
+        }
     </style>
 </head>
 
@@ -301,7 +341,7 @@
     </div>
     <div id="navegacion">
         <p class="nav"><a class="nav-url" href="index.html">Inicio</a></p>
-        <p class="nav"><a class="nav-url" href="restaurant01.html">Restaurantes cerca</a></p>
+        <p class="nav"><a class="nav-url" href="barescerca.html">Restaurantes cerca</a></p>
         <p class="nav"><a class="nav-url" href="contacto.html">Contacto</a></p>
     </div>
     <div id="estructura">
@@ -321,12 +361,12 @@
 
                 
                 <div id="contacto-datos">
-                    <p>Telefono</p>
-                    <p>Correo</p>
-                    <p>Dirección</p>
-                    <p>facebook</p>
-                    <p>Instagram</p>
-                    <p>WhatsApp</p>
+                    <p id="contact-tel"><img  src="image/ico-tel.png" alt="">&nbsp;&nbsp;684368855</p>
+                    <p id="contact-mail" ><img src="image/ico-mail.png" alt="">&nbsp;&nbsp;lorem@22poblenou.com</p>
+                    <p id="contact-direccion"><img  src="image/direccion-icon.png" alt="">&nbsp;&nbsp;Calle de la Ciudad de Granada 90</p>
+                    <p id="contact-face"><img  src="image/face-icon.png" alt=""><a href="http://www.facebook.com/poblenou">&nbsp;&nbsp;http://www.facebook.com/poblenou</a></p>
+                    <p id="contact-insta"><img  src="image/instagram.png" alt=""><a href="http://www.instagram.com/poblenou">&nbsp;&nbsp;http://www.instagram.com/poblenou</a></p>
+                    <p id="contact-what"><img  src="image/whatsapp.png" alt="">&nbsp;&nbsp;+34 684368855</p>
 
 
                 </div>
