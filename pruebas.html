@@ -1,73 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E38eEb5Z13t02OsR45ejvg7wX_1J-Ks&v=3.exp"></script>
-
-    <script type="text/javascript">
-        function iniciarMapa() {
-            var mapOptions = {
-                zoom: 10,
-                center: new google.maps.LatLng(-12, -76)
-            };
-            var map = new google.maps.Map(document.getElementById('mapAqui'), mapOptions);
-            var serDirection = new google.maps.DirectionsService();
-            var serDisplay = new google.maps.DirectionsRenderer();
-            serDisplay.setMap('map')
-            var marcador = new google.maps.Marker({
-                position: mapOptions.center,
-                map: map,
-            });
-            var ventanaEmergente = new google.maps.InfoWindow({
-                content: '<div id="infoWindow"><div id="info-titulo"><h2>Texto Aqui</h2></div><div id="info-descp"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt minima soluta dolorem voluptatibusnobiscumque quos modi animi repellendus asperiores sit delectus maxime exercitationem, veniam error omnis? Provident, cum sequi.</p> </div> <div id="info-img"> <p><img src="image/xorus.jpg" alt=""></p> </div> <div id="info-cont"> <p> <img class="info-cont-ico" src="image/telefono.png" alt=""> <b></b>684368855 <img class="info-cont-ico"src="image/direccion.png" alt=""> Direccion</p></div><div id="info-map"><p><a href="">Mostrar ruta</a></p></div></div>'
-            });
-            google.maps.event.addListener(marcador, 'click', function () {
-                ventanaEmergente.open(map, marcador)
-            });
-            function mostrarRuta(){
-                serDirection.route({
-                    origin: new google.maps.LatLng(12.5, 76.5),
-                    destination: new new google.maps.LatLng(12.6, 76.6),
-                    travelMode: 'DRIVING'
-                }, function(response, status){
-                    if (status === 'OK'){
-                        serDisplay.setDirections(response);
-                    }
-                })
-            }
-            mostrarRuta();
-        };
-        google.maps.event.addDomListener(window, 'load', iniciarMapa)
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Poblenou</title>
     <style>
-        #mapAqui {
-            height: 600px;
-            background: #999999
+        ul,
+        ol {
+            list-style: none
         }
+
+        h1,
+        h1,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code {
+            font-size: 1em;
+        }
+
+        ul,
+        ol,
+        li,
+        h1,
+        h1,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        form,
+        body,
+        html,
+        p,
+        blockquote,
+        fieldset {
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            list-style: none;
+        }
+
+        a img,
+        :link img,
+        :visited img,
+        fieldset {
+            border: none;
+        }
+
+        input[type=submit],
+        input[type=reset],
+        input[type=button] {
+            *filter: chroma(color=#000000);
+        }
+
+        #estructura {
+            xxbackground: linear-gradient(to right, rgba(99, 212, 240, 1) 0%, rgba(66, 200, 237, 1) 41%, rgba(1, 132, 178, 1) 100%);
+            width: 100%;
+            height: 800px;
+            margin: 0px auto;
+            xxbox-shadow: -2px -2px 30px 1px rgb(153, 124, 153);
+            xxborder: solid blue;
+        }
+
+        body {
+            background: #DCDCDC;
+        }
+
+        #main-header:hover {
+            color: rgb(17, 143, 201);
+        }
+
+        #main-header {
+            text-decoration: none;
+            color: black;
+        }
+
+        #navegacion {
+            background: #32333a;
+            padding-top: 10px;
+            height: 40px;
+            width: 100%;
+            margin: 5px auto;
+            xxborder: solid violet;
+            position: fixed;
+            top: 65px;
+            z-index: 25;
+        }
+
+        .nav {
+            display: inline-block;
+            color: white;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            border-bottom: 3px solid transparent;
+            border-radius: 7px;
+            background: transparent;
+            box-shadow: -2px 1px 1px 1px rgb(153, 124, 153);
+            padding: 5px;
+            margin-left: 21%;
+        }
+
+        .nav-url:link {
+            color: white;
+        }
+
+        .nav-url:visited {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-url:hover {
+            color: rgb(17, 143, 201);
+        }
+
+        #barra-fixed {
+            background-color: #808080;
+            position: fixed;
+            height: 70px;
+            width: 100%;
+            z-index: 25;
+            xxbox-shadow: 1px 1px 1px 1px rgb(165, 164, 165);
+            padding: 0;
+            top: 0px;
+            xxborder: solid rebeccapurple;
+        }
+
+        #seccion {
+            background: transparent;
+            height: 900px;
+            width: 100%;
+            margin: 5px auto 5px auto;
+            z-index: 10;
+            xxborder: solid red;
+        }
+
+        #footer {
+            background: transparent;
+            height: 121px;
+            width: 100%;
+            margin: 5px 0 5px 0;
+            xxborder: solid green;
+        }
+
+        #footer-text {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            margin-top: 40px;
+        }
+
+        #contenido {
+            position: relative;
+            xxbackground: #0000ff;
+            height: 900px;
+            width: 1500px;
+            border: solid black;
+            top: -5px;
+
+            margin: 0 auto;
+
+
+        }
+
+        #fixed-cabecera1 {
+            float: left;
+            padding-left: 20%;
+            font-size: 50px;
+            font-weight: bold;
+            padding-top: 8px;
+            border-right: solid black;
+        }
+
+        #fixed-cabecera2 {
+            float: left;
+            padding-left: 2%;
+            font-weight: bold;
+        }
+
+        #fixed-cabecera3 {
+            float: left;
+            padding-left: 25%;
+        }
+
+        #fixed-cabecera4 {
+            float: left;
+            padding-left: 2%;
+        }
+
+        #fixed-cabecera5 {
+            float: left;
+            padding-left: 2%;
+        }
+
+        #ico-tel {
+            height: 50px;
+            padding-top: 10px;
+        }
+
+        #ico-mail {
+            height: 50px;
+            padding-top: 10px;
+        }
+
+        #ico-nav {
+            height: 50px;
+            padding-top: 10px;
+        }
+
+        #titulo {
+            text-decoration: none;
+            color: #000
+        }
+
+        #titulo:hover {
+            color: rgb(17, 143, 201);
+        }
+
+        .titulos:hover {
+            color: rgb(17, 143, 201);
+        }
+
+        #mapAqui {
+            xxmargin: 20px 0 0 20px;
+            border: solid black;
+            height: 794px;
+            width: 100%px;
+            top: 101px;
+
+        }
+
 
         #infoWindow {
             position: relative;
-            xxbackground: red;
-            xxborder: solid blue;
             height: 280px;
-            width: 350px;
+            width: 360px;
             margin: 0;
-
+            box-shadow: -14px 0px 0px rgb(189, 20, 20), -14px 9px 0px rgb(184, 15, 15), -14px rgb(145, 21, 21)x rgb(167, 18, 18), 15px -8px 0px #DCDCDC, 15px 9px 0px #DCDCDC4c
         }
 
         .iw-content {
-            border: solid red;
+            xxborder: solid red;
             height: 290px;
             width: 350px;
         }
 
-        .gm-style-iw {
-            background: #DCDCDC;
-            height: 300px;
-            width: 200%;
-            box-shadow: -14px 0px 0px #DCDCDC, -14px 9px 0px #DCDCDC, -14px -8px 0px #DCDCDC, 15px -8px 0px #DCDCDC, 15px 9px 0px #DCDCDC4c
+
+        .gm-style .gm-style-iw-c {
+            position: absolute;
+            box-sizing: border-box;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -100%);
+            background-color: #ff2301;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 2px 7px 1px red;
         }
+
+        .gm-style .gm-style-iw-d::-webkit-scrollbar-track,
+        .gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece {
+            background: #ff2301;
+        }
+
+
 
         #info-titulo {
             position: absolute;
@@ -116,18 +318,19 @@
 
         #info-titulo h2 {
             xxposition: absolute;
-            padding: 0;
+            padding-top: 3px;
             margin: 0;
             text-align: center;
-            left: 300px;
+            top: 3px;
+            left: 90px;
         }
 
         #info-descp p {
-            xxposition: absolute;
+            position: absolute;
             padding: 0;
             margin: 0;
             text-align: center;
-            left: 300px;
+            top: 10px;
             font-size: 13px;
         }
 
@@ -141,7 +344,7 @@
 
         #info-img p {
             position: absolute;
-            top: -13px;
+            top: 0px;
 
         }
 
@@ -159,7 +362,7 @@
 
         #info-cont p {
             position: absolute;
-            top: -2px;
+            top: 5px;
             left: 6px;
         }
 
@@ -176,16 +379,312 @@
             color: red;
 
         }
+
+        #menu-flotante {
+            position: absolute;
+            top: 160px;
+            left: 14px;
+            xxborder: solid #4c4c4c;
+            z-index: 5;
+            xxborder: solid 1px #999;
+            background: #06a2ff;
+            padding: 5px;
+            font-size: 25px;
+        }
+
+        #destino {
+            background: #cdcdcd;
+        }
+
+        #menu-flotante-travel {
+            position: absolute;
+            z-index: 5;
+            top: 200px;
+            left: 14px;
+            xxborder: solid red;
+            background: #06a2ff;
+            font-size: 25px;
+            padding: 5px;
+        }
+
+        #modo-viaje {
+            background: #cdcdcd;
+        }
+
+        #panel-prueba {
+            position: absolute;
+            background: transparent;
+            top: 500px;
+            height: 20px;;
+
+        }
+        #subimit{
+            color: transparent;
+        }
+        #end{
+            xxcolor: transparent;
+            outline: transparent;
+            xxbackground: transparent;
+            z-index: -10000;
+            border-style: none;
+        }
     </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E38eEb5Z13t02OsR45ejvg7wX_1J-Ks&v=3.exp"></script>
+    <script type="text/javascript">
+        var marcas = [];
+        var usarioLoc = [];
+        var map;
+
+
+        function iniciarMap() {
+            var optionMap = {
+                zoom: 17,
+                center: new google.maps.LatLng(41.39933049527024, 2.1970036625316425),
+                //En esta linea se quitan los elementos que pueden hacer ruido en google maps
+                styles: [{
+                    "featureType": "poi",
+                    "stylers": [
+                        { "visibility": "off" }
+                    ]
+                }]
+            }
+            map = new google.maps.Map(document.getElementById('mapAqui'), optionMap);
+            // Esta linea adapta el zoom segun los marcadores que se van añadiendo
+            var extencion = new google.maps.LatLngBounds();
+
+            // DirectionService y DirectionRenderer permiten llamar al servicios de ruta de google maps
+            var serviceDir = new google.maps.DirectionsService;
+            var displayDir = new google.maps.DirectionsRenderer({
+                // Permite desactivar o activar los markers del sericio de ruta
+                suppressMarkers: false,
+                preserveViewport: true,
+                InfoWindow: 'hola'
+
+            });
+            //Se agrega el Renderer al mapa
+            displayDir.setMap(map);
+            // Se crea una variable que contendra una matriz con los datos de los bares. Se deja vacia para luego insertarle datos facilemnte.
+            var baresP = [];
+            var usarioLoc = [];
+            //con .push se inserta información
+            baresP.push({ lat: 41.40288966232697, lng: 2.198766893752577, bar: 'Xorus', id: 'ChIJ0UGVLDyjpBIRdNcVCTidgPs', img: 'image/xorus.jpg', descp: 'HolaPhasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem.<br>  Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '603 307 117', address: 'calle granada 90', web: 'xorus.html'});
+            baresP.push({ lat: 41.3983979113559, lng: 2.204631508368948, bar: 'Blue Bar', id: 'ChIJpa-3z2qjpBIRUW4SwqLY7mk', img: 'image/bluebar.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 280 90 59', address: ' Pallars, 122', });
+            baresP.push({ lat: 41.39684988162788, lng: 2.192088531196873, bar: 'D9', id: 'ChIJnVDdoRmjpBIR8Ra7Fpj8nxE', img: 'image/d9.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 667 74 54', address: 'Rambla de Poblenou 44-46', });
+            baresP.push({ lat: 41.400050872923345, lng: 2.2028905449215017, bar: 'El Tío Ché', id: 'ChIJxxFIXhWjpBIRv6GISCWyg3k', img: 'image/tioche.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 485 45 63', address: 'Roc boronat 70', web: 'eltioche.html'});
+            baresP.push({ lat: 41.400315323140894, lng: 2.197856248397329, bar: 'La Tavernicola', id: 'ChIJk7Fa9T2jpBIRdqE3OM-I1OE', img: 'image/tavernicola.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 300 27 19', address: ' Pujades, 187', });
+            baresP.push({ lat: 41.39421498232687, lng: 2.1902336778967992, bar: 'VAN VAN VAR', id: 'ChIJF5JJ6xujpBIRBzATAsctpzo', img: 'image/vanvan.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 280 90 59', address: 'c/ Pujades, 27', });
+            baresP.push({ lat: 41.39972046588015, lng: 2.197960789995136, bar: 'Koh Barcelona', id: 'ChIJ_Vo6GBajpBIRh3pxFDRwwHE', img: 'image/koh.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 300 27 19', address: 'c/ Pujades 133', web: 'kohBarcelona.html' });
+            baresP.push({ lat: 41.39905586185007, lng: 2.1884684125484455, bar: 'Carrot Café', id: 'ChIJOxH8OB-jpBIR7vPH-6sGdbE', img: 'image/cafe.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 485 45 63', address: 'Tànger 22', });
+            baresP.push({ lat: 41.40018057558551, lng: 2.196335694637696, bar: 'El Quinto', id: 'ChIJ28jR1RejpBIRTRn51kfhYks', img: 'image/quinto.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 667 74 54', address: 'c/ pallars 173', });
+            baresP.push({ lat: 41.40234436453319, lng: 2.1975257992744446, bar: 'Little Fern', id: 'ChIJa6oysT2jpBIR3fVfIHbKT-k', img: 'image/fern.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '603 307 117', address: ' Pere IV 168', });
+            baresP.push({ lat: 41.40279755963731, lng: 2.204651612890757, bar: 'Nolita Brunch', id: 'ChIJq6oaXUCjpBIR64wPes1ktJo', img: 'image/brunch.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 280 90 59', address: 'carrer de Lull, 230 ', });
+            baresP.push({ lat: 41.402358447706334, lng: 2.195291519165039, bar: 'Sopa', id: 'ChIJURRcJD2jpBIRWs4qJD3ze3s', img: 'image/sopa.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 280 90 59', address: 'Roc Boronat 114', });
+            baresP.push({ lat: 41.39914909740565, lng: 2.1952463940300504, bar: 'Cafetería Industrial', id: 'ChIJL2kxw7yjpBIRfYmOftP7Zps', img: 'image/industrial.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 300 27 19', address: ' c/ Pallars, 154 ', });
+            baresP.push({ lat: 41.400898537185796, lng: 2.1998184227581987, bar: 'La Taqueria Poblenou', id: 'ChIJ-_KWtx2jpBIRKF7h5ud3oNU', img: 'image/taqueria.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 485 45 63', address: 'c/ Pujades, 172', });
+            baresP.push({ lat: 41.40073255300822, lng: 2.1997118049498567, bar: 'Timesburg', id: 'ChIJWZjZGj6jpBIRyx-Ib3BptuE', img: 'image/timesburg.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '34 93 667 74 54', address: 'Pujades, 168', });
+            baresP.push({ lat: 41.398336760884284, lng: 2.198448718889267, bar: 'Can Dendê', id: 'ChIJW3zhZRajpBIREKj_RG2OBX0', img: 'image/dende.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '603 307 117', address: 'Ciutat de Granada 44', });
+            baresP.push({ lat: 41.40196612959878, lng: 2.2022169828414917, bar: 'Nabibi Vital Cooking', id: 'ChIJ__Rhuj-jpBIR7ezEFfV4OiM', img: 'image/nabibi.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: ' 931 79 17 57', address: 'Marià Aguiló 61 ', web: 'nabibi.html'});
+            baresP.push({ lat: 41.401760000157886, lng: 2.1960682783626453, bar: 'Catacroquet', id: 'ChIJlc0gDj2jpBIRCeHIKTkV9QQ', img: 'image/catacroquet.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 280 90 59', address: 'Almogàvers 211', });
+            baresP.push({ lat: 41.39750899675166, lng: 2.19676075789107, bar: 'Leka', id: 'ChIJ8_vN_RajpBIRZl5Iwmowr5c', img: 'image/leka.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 300 27 19', address: 'Badajoz 65', });
+            baresP.push({ lat: 41.39841980177608, lng: 2.1956214190337278, bar: 'Market', id: 'ChIJt7oioxejpBIRyRGWOMn0XaE', img: 'image/market.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 485 45 63', address: 'Badajoz 83', });
+
+            // Las tres variables siguientes, permiten darle un efecto dinamico a los markers e interaccion con el usuario 
+            var luz = new google.maps.MarkerImage('image/icoVioleta.png')
+            var luzOver = new google.maps.MarkerImage('image/icoPlomo.png')
+            var luzClick = new google.maps.MarkerImage('image/icoAzul.png')
+            // se declara la variable infoVent que contendra el infowindow
+            var infoVent;
+            //Se crea los markers pasando por cada elemento de la matriz de bares
+            function verMarcas() {
+                for (var i = 0; i < baresP.length; i++) {
+                    marcas[i] = new google.maps.Marker({
+                        position: new google.maps.LatLng(baresP[i].lat, baresP[i].lng),
+                        map: map,
+                        title: baresP[i].bar,
+                        icon: luz,
+                        animation: google.maps.Animation.DROP,
+                        /*label: {
+                            color: '#0000ff',
+                            text: baresP[i].bar,
+                            fontSize: '20px',
+                            fontWeight: '20px',
+                        },*/
+
+                    });
+
+
+
+                    // Los siguientes eventos 'escuchan' lo que pasa cuando el mouse pasa por los marcadores
+                    google.maps.event.addListener(marcas[i], 'mouseover', function () {
+                        this.setIcon(luzOver)
+                    });
+                    google.maps.event.addListener(marcas[i], 'mouseout', function () {
+                        this.setIcon(luz)
+                    });
+                    google.maps.event.addListener(marcas[i], 'mousedown', function () {
+                        this.setIcon(luzClick)
+                    });
+                    google.maps.event.addListener(marcas[i], 'mouseup', function () {
+                        this.setIcon(luz)
+                    });
+
+                    // se crea una funcion que escuchara cuando se haga click en el marker, y devolvera la ventana de infowindow
+                    (function (i, marcas) {
+                        google.maps.event.addListener(marcas[i], 'click', function () {
+                            // el simbolo ! comprueba si existe la variable
+                            if (!infoVent) {
+                                infoVent = new google.maps.InfoWindow({
+                                    disableAutoPan: false
+                                });
+                            }
+                            //se agrega el contenido html al contenido
+                            infoVent.setContent('<div id="infoWindow"><div id="info-titulo"><h2>' + baresP[i].bar + '</h2></div><div id="info-descp"><p>' + baresP[i].descp + '</p> </div> <div id="info-img"> <p><img src="' + baresP[i].img + '" alt=""></p> </div> <div id="info-cont"> <p> <img class="info-cont-ico" src="image/telefono.png" alt=""> <b></b>' + baresP[i].fono + ' <img class="info-cont-ico"src="image/direccion.png" alt="">' + baresP[i].address + '</p></div><div id="info-map"><p><a id ="mostrarRuta" href="'+baresP[i].web+'">Mostrar ruta</a></p></div></div>')
+                            infoVent.open(map, marcas[i])
+                        });
+                    })(i, marcas);
+                    extencion.extend(baresP[i])
+
+                };//termina el for
+            };
+            verMarcas();
+            var miPosicion = new google.maps.MarkerImage('image/gps-icon.png')
+            function ubicacionUsuario() {
+                marcaUsuario = new google.maps.Marker({
+                    position: new google.maps.LatLng(41.3976537, 2.1941345),
+                    map: map,
+                    title: 'Mi posición',
+                    icon: miPosicion
+                })
+            };
+            ubicacionUsuario();
+
+            // Es parte del codigo que ajusta el zoom a cada nuevo marcador que se va agregando
+            map.fitBounds(extencion);
+            function limpiarMarcas() {
+                for (var i = 0; i < marcas.length; i++) {
+                    marcas[i].setMap(null)
+                };
+                marcaUsuario.setMap(null)
+            };
+
+            // Parte del codigo que crea rutas
+            var option, e
+            // Se crea una variable que contralara el elemento 'select' del codigo html
+            var caja = document.getElementById('destino');
+            
+
+            // Con este for se crea los destinos a partir de la matriz de bares
+            for (e = 0; e < baresP.length; e++) {
+                option = document.createElement('option'); //se crea el elemento 'option' de los select
+                option.value = baresP[e].id; // se le asigna el valor que tendra al option
+                option.text = baresP[e].bar; // el texto que muestra en el menu del select
+                option.id = "hola"; // la clase para luego, de ser necesario, controlarla
+                caja.add(option);
+
+                // Este fragmento de codigo ayuda a cambiar de ruta
+                var onCambiarRuta = function () {
+                    mostrarRuta(serviceDir, displayDir);
+                };
+                var onCambiarRutaInfo = function () {
+                    mostrarRutaInfo(serviceDir, displayDir);
+                };
+
+                // escucha cuando se cambia de ruta
+
+                document.getElementById('destino').addEventListener('change', onCambiarRuta);
+
+                document.getElementById('modo-viaje').addEventListener('change', onCambiarRuta);
+                document.getElementById('modo-viaje').addEventListener('change', onCambiarRutaInfo);
+                
+
+
+                // se crea el vector de la ruta
+                function mostrarRuta(serviceDir, displayDir) {
+                    var seleeccionModo = document.getElementById('modo-viaje').value;
+
+                    serviceDir.route({
+                        origin: new google.maps.LatLng(41.3976537, 2.1941345, 17), // el punto de partida de la ruta
+                        destination: { placeId: document.getElementById('destino').value }, // el punto final de la ruta, se uso  el place IDde cada lugar, (se puede reemplazar por un elemento LatLng)
+                        travelMode: google.maps.TravelMode[seleeccionModo] // modo de viaje, en este caso es caminando
+                    }, function (response, status) {
+                        if (status === 'OK') {
+                            displayDir.setDirections(response);
+                            limpiarMarcas();
+                        }
+                        // La documentacion indica que se debe agregar el else, que devolvera el tipo de error, pero en mi caso no permite que funcione bien el cambio de rutas. Por el esta comentado la parte del else
+                        /*else {
+                            window.alert('hay un error en: ' + status)
+                        }*/
+                    });
+                };
+
+                
+                
+
+            };
+
+        };
+
+        google.maps.event.addDomListener(window, 'load', iniciarMap)
+    </script>
 </head>
 
 <body>
-    <div id="mapAqui"></div>
+    <div id="barra-fixed">
+        <div id="fixed-cabecera1"> <a id="titulo" href="index.html">
+                <p>22@Poblenou</p>
+            </a></div>
+        <div id="fixed-cabecera2">
+            <p>Estas en: <br> Poblenou</p>
+        </div>
+        <div id="fixed-cabecera3"><a href="contacto.html">
+                <p><img id="ico-tel" src="image/ico-tel.png" title="684368855"></p>
+            </a></div>
+        <div id="fixed-cabecera4"><a href="contacto.html">
+                <p><img id="ico-mail" src="image/ico-mail.png" title="bar@poblenou.com"></p>
+            </a></div>
+        <div id="fixed-cabecera5"> <a href="barescerca.html">
+                <p><img id="ico-nav" src="image/ico-navigate.png" title="Buscar en en el mapa"></p>
+            </a></div>
+    </div>
+    <div id="navegacion">
+        <p class="nav"><a class="nav-url" href="index.html">Inicio</a></p>
+        <p class="nav"><a class="nav-url" href="barescerca.html">Restaurantes cerca</a></p>
+        <p class="nav"><a class="nav-url" href="contacto.html">Contacto</a></p>
+    </div>
+    <div id="estructura">
+        <header>
+            <a href="index.html" id="main-header">22@POBLENOU</a>
+        </header>
+        <div id="seccion">
+            <div id="contenido">
 
-    
+                <div id="mapAqui"></div>
+                <div id="menu-flotante">
+                    <b>Mostrar ruta</b>
+                    <select name="" id="destino">
+                        <option value="">Elegir bar</option>
 
+                    </select>
+                </div>
+                <div id="menu-flotante-travel">
+                    <b>Modo de viaje: </b>
+                    <select name="" id="modo-viaje">
+                        <option value="WALKING">Caminando</option>
+                        <option value="DRIVING">Conduciendo</option>
+                        <option value="BICYCLING">Bicicleteando</option>
+                        <option value="TRANSIT">Público</option>
+                    </select>
+                </div>
+                
 
-
+            </div>
+            <footer id="footer">
+                <div id="footer-text">
+                    <p>Derechos Reservados 2019-2020</p>
+                </div>
+            </footer>
+        </div>
 </body>
 
 </html>

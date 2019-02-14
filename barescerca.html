@@ -59,12 +59,9 @@
         }
 
         #estructura {
-            xxbackground: linear-gradient(to right, rgba(99, 212, 240, 1) 0%, rgba(66, 200, 237, 1) 41%, rgba(1, 132, 178, 1) 100%);
             width: 100%;
             height: 800px;
             margin: 0px auto;
-            xxbox-shadow: -2px -2px 30px 1px rgb(153, 124, 153);
-            xxborder: solid blue;
         }
 
         body {
@@ -86,7 +83,6 @@
             height: 40px;
             width: 100%;
             margin: 5px auto;
-            xxborder: solid violet;
             position: fixed;
             top: 65px;
             z-index: 25;
@@ -125,10 +121,8 @@
             height: 70px;
             width: 100%;
             z-index: 25;
-            xxbox-shadow: 1px 1px 1px 1px rgb(165, 164, 165);
             padding: 0;
             top: 0px;
-            xxborder: solid rebeccapurple;
         }
 
         #seccion {
@@ -137,7 +131,6 @@
             width: 100%;
             margin: 5px auto 5px auto;
             z-index: 10;
-            xxborder: solid red;
         }
 
         #footer {
@@ -145,7 +138,6 @@
             height: 121px;
             width: 100%;
             margin: 5px 0 5px 0;
-            xxborder: solid green;
         }
 
         #footer-text {
@@ -157,15 +149,11 @@
 
         #contenido {
             position: relative;
-            xxbackground: #0000ff;
             height: 900px;
             width: 1500px;
             border: solid black;
             top: -5px;
-
             margin: 0 auto;
-
-
         }
 
         #fixed-cabecera1 {
@@ -227,14 +215,11 @@
         }
 
         #mapAqui {
-            xxmargin: 20px 0 0 20px;
             border: solid black;
             height: 794px;
             width: 100%px;
             top: 101px;
-
         }
-
 
         #infoWindow {
             position: relative;
@@ -242,11 +227,9 @@
             width: 360px;
             margin: 0;
             box-shadow: -14px 0px 0px rgb(189, 20, 20), -14px 9px 0px rgb(184, 15, 15), -14px rgb(145, 21, 21)x rgb(167, 18, 18), 15px -8px 0px #DCDCDC, 15px 9px 0px #DCDCDC4c
-
         }
 
         .iw-content {
-            xxborder: solid red;
             height: 290px;
             width: 350px;
         }
@@ -259,7 +242,7 @@
             top: 0;
             left: 0;
             transform: translate(-50%, -100%);
-            background-color: red;
+            background-color: #ff2301;
             border-radius: 8px;
             padding: 12px;
             box-shadow: 0 2px 7px 1px red;
@@ -267,11 +250,9 @@
 
         .gm-style .gm-style-iw-d::-webkit-scrollbar-track,
         .gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece {
-            background: red;
+            background: #ff2301;
         }
 
-         
-        
         #info-titulo {
             position: absolute;
             height: 30px;
@@ -318,7 +299,6 @@
         }
 
         #info-titulo h2 {
-            xxposition: absolute;
             padding-top: 3px;
             margin: 0;
             text-align: center;
@@ -346,7 +326,6 @@
         #info-img p {
             position: absolute;
             top: 0px;
-
         }
 
         .info-cont-ico {
@@ -358,7 +337,6 @@
         #info-cont {
             font-size: 11px;
             line-height: 5px;
-
         }
 
         #info-cont p {
@@ -376,18 +354,14 @@
         }
 
         #info-map p a:hover {
-
             color: red;
-
         }
 
         #menu-flotante {
             position: absolute;
-            top: 117px;
-            left: 200px;
-            xxborder: solid #4c4c4c;
+            top: 160px;
+            left: 14px;
             z-index: 5;
-            xxborder: solid 1px #999;
             background: #06a2ff;
             padding: 5px;
             font-size: 25px;
@@ -396,13 +370,43 @@
         #destino {
             background: #cdcdcd;
         }
+
+        #menu-flotante-travel {
+            position: absolute;
+            z-index: 5;
+            top: 200px;
+            left: 14px;
+            background: #06a2ff;
+            font-size: 25px;
+            padding: 5px;
+        }
+
+        #modo-viaje {
+            background: #cdcdcd;
+        }
+
+        #panel-prueba {
+            position: absolute;
+            background: transparent;
+            top: 500px;
+            height: 20px;
+        }
+
+        #subimit {
+            color: transparent;
+        }
+
+        #end {
+            outline: transparent;
+            z-index: -10000;
+            border-style: none;
+        }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E38eEb5Z13t02OsR45ejvg7wX_1J-Ks&v=3.exp"></script>
     <script type="text/javascript">
         var marcas = [];
         var usarioLoc = [];
         var map;
-
 
         function iniciarMap() {
             var optionMap = {
@@ -415,7 +419,7 @@
                         { "visibility": "off" }
                     ]
                 }]
-            }
+            };
             map = new google.maps.Map(document.getElementById('mapAqui'), optionMap);
             // Esta linea adapta el zoom segun los marcadores que se van añadiendo
             var extencion = new google.maps.LatLngBounds();
@@ -435,26 +439,26 @@
             var baresP = [];
             var usarioLoc = [];
             //con .push se inserta información
-            baresP.push({ lat: 41.40288966232697, lng: 2.198766893752577, bar: 'Xorus', id: 'ChIJ0UGVLDyjpBIRdNcVCTidgPs', img: 'image/xorus.jpg', descp: 'HolaPhasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem.<br>  Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '603 307 117', address: 'calle granada 90', });
-            baresP.push({ lat: 41.3983979113559, lng: 2.204631508368948, bar: 'Blue Bar', id: 'ChIJpa-3z2qjpBIRUW4SwqLY7mk', img: 'image/bluebar.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 280 90 59', address: ' Pallars, 122', });
-            baresP.push({ lat: 41.39684988162788, lng: 2.192088531196873, bar: 'D9', id: 'ChIJnVDdoRmjpBIR8Ra7Fpj8nxE', img: 'image/d9.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 667 74 54', address: 'Rambla de Poblenou 44-46', });
-            baresP.push({ lat: 41.400050872923345, lng: 2.2028905449215017, bar: 'El Tío Ché', id: 'ChIJxxFIXhWjpBIRv6GISCWyg3k', img: 'image/tioche.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 485 45 63', address: 'Roc boronat 70', });
-            baresP.push({ lat: 41.400315323140894, lng: 2.197856248397329, bar: 'La Tavernicola', id: 'ChIJk7Fa9T2jpBIRdqE3OM-I1OE', img: 'image/tavernicola.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 300 27 19', address: ' Pujades, 187', });
-            baresP.push({ lat: 41.39421498232687, lng: 2.1902336778967992, bar: 'VAN VAN VAR', id: 'ChIJF5JJ6xujpBIRBzATAsctpzo', img: 'image/vanvan.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 280 90 59', address: 'c/ Pujades, 27', });
-            baresP.push({ lat: 41.39972046588015, lng: 2.197960789995136, bar: 'Koh Barcelona', id: 'ChIJ_Vo6GBajpBIRh3pxFDRwwHE', img: 'image/koh.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 300 27 19', address: 'c/ Pujades 133', });
-            baresP.push({ lat: 41.39905586185007, lng: 2.1884684125484455, bar: 'Carrot Café', id: 'ChIJOxH8OB-jpBIR7vPH-6sGdbE', img: 'image/cafe.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 485 45 63', address: 'Tànger 22', });
-            baresP.push({ lat: 41.40018057558551, lng: 2.196335694637696, bar: 'El Quinto', id: 'ChIJ28jR1RejpBIRTRn51kfhYks', img: 'image/quinto.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 667 74 54', address: 'c/ pallars 173', });
-            baresP.push({ lat: 41.40234436453319, lng: 2.1975257992744446, bar: 'Little Fern', id: 'ChIJa6oysT2jpBIR3fVfIHbKT-k', img: 'image/fern.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '603 307 117', address: ' Pere IV 168', });
-            baresP.push({ lat: 41.40279755963731, lng: 2.204651612890757, bar: 'Nolita Brunch', id: 'ChIJq6oaXUCjpBIR64wPes1ktJo', img: 'image/brunch.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 280 90 59', address: 'carrer de Lull, 230 ', });
-            baresP.push({ lat: 41.402358447706334, lng: 2.195291519165039, bar: 'Sopa', id: 'ChIJURRcJD2jpBIRWs4qJD3ze3s', img: 'image/sopa.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 280 90 59', address: 'Roc Boronat 114', });
-            baresP.push({ lat: 41.39914909740565, lng: 2.1952463940300504, bar: 'Cafetería Industrial', id: 'ChIJL2kxw7yjpBIRfYmOftP7Zps', img: 'image/industrial.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 300 27 19', address: ' c/ Pallars, 154 ', });
-            baresP.push({ lat: 41.400898537185796, lng: 2.1998184227581987, bar: 'La Taqueria Poblenou', id: 'ChIJ-_KWtx2jpBIRKF7h5ud3oNU', img: 'image/taqueria.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 485 45 63', address: 'c/ Pujades, 172', });
-            baresP.push({ lat: 41.40073255300822, lng: 2.1997118049498567, bar: 'Timesburg', id: 'ChIJWZjZGj6jpBIRyx-Ib3BptuE', img: 'image/timesburg.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '34 93 667 74 54', address: 'Pujades, 168', });
-            baresP.push({ lat: 41.398336760884284, lng: 2.198448718889267, bar: 'Can Dendê', id: 'ChIJW3zhZRajpBIREKj_RG2OBX0', img: 'image/dende.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '603 307 117', address: 'Ciutat de Granada 44', });
-            baresP.push({ lat: 41.40196612959878, lng: 2.2022169828414917, bar: 'Nabibi Vital Cooking', id: 'ChIJ__Rhuj-jpBIR7ezEFfV4OiM', img: 'image/nabibi.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: ' 931 79 17 57', address: 'Marià Aguiló 61 ', });
-            baresP.push({ lat: 41.401760000157886, lng: 2.1960682783626453, bar: 'Catacroquet', id: 'ChIJlc0gDj2jpBIRCeHIKTkV9QQ', img: 'image/catacroquet.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 280 90 59', address: 'Almogàvers 211', });
-            baresP.push({ lat: 41.39750899675166, lng: 2.19676075789107, bar: 'Leka', id: 'ChIJ8_vN_RajpBIRZl5Iwmowr5c', img: 'image/leka.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 300 27 19', address: 'Badajoz 65', });
-            baresP.push({ lat: 41.39841980177608, lng: 2.1956214190337278, bar: 'Market', id: 'ChIJt7oioxejpBIRyRGWOMn0XaE', img: 'image/market.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 485 45 63', address: 'Badajoz 83', });
+            baresP.push({ lat: 41.40288966232697, lng: 2.198766893752577, bar: 'Xorus', id: 'ChIJ0UGVLDyjpBIRdNcVCTidgPs', img: 'image/xorus.jpg', descp: 'HolaPhasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem.<br>  Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/Xorus/', fono: '603 307 117', address: 'calle granada 90', web: 'xorus.html' });
+            baresP.push({ lat: 41.3983979113559, lng: 2.204631508368948, bar: 'Blue Bar', id: 'ChIJpa-3z2qjpBIRUW4SwqLY7mk', img: 'image/bluebar.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/bluebar/', fono: '93 280 90 59', address: ' Pallars, 122', web: '' });
+            baresP.push({ lat: 41.39684988162788, lng: 2.192088531196873, bar: 'D9', id: 'ChIJnVDdoRmjpBIR8Ra7Fpj8nxE', img: 'image/d9.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 667 74 54', address: 'Rambla de Poblenou 44-46', web: '' });
+            baresP.push({ lat: 41.400050872923345, lng: 2.2028905449215017, bar: 'El Tío Ché', id: 'ChIJxxFIXhWjpBIRv6GISCWyg3k', img: 'image/tioche.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/eltioche/', fono: '93 485 45 63', address: 'Roc boronat 70', web: 'eltioche.html' });
+            baresP.push({ lat: 41.400315323140894, lng: 2.197856248397329, bar: 'La Tavernicola', id: 'ChIJk7Fa9T2jpBIRdqE3OM-I1OE', img: 'image/tavernicola.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 300 27 19', address: ' Pujades, 187', web: '' });
+            baresP.push({ lat: 41.39421498232687, lng: 2.1902336778967992, bar: 'VAN VAN VAR', id: 'ChIJF5JJ6xujpBIRBzATAsctpzo', img: 'image/vanvan.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/vanvanbar/', fono: '93 280 90 59', address: 'c/ Pujades, 27', web: '' });
+            baresP.push({ lat: 41.39972046588015, lng: 2.197960789995136, bar: 'Koh Barcelona', id: 'ChIJ_Vo6GBajpBIRh3pxFDRwwHE', img: 'image/koh.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/kohbarcelona/', fono: '93 300 27 19', address: 'c/ Pujades 133', web: 'kohBarcelona.html' });
+            baresP.push({ lat: 41.39905586185007, lng: 2.1884684125484455, bar: 'Carrot Café', id: 'ChIJOxH8OB-jpBIR7vPH-6sGdbE', img: 'image/cafe.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/carrotcafe/', fono: '93 485 45 63', address: 'Tànger 22', web: '' });
+            baresP.push({ lat: 41.40018057558551, lng: 2.196335694637696, bar: 'El Quinto', id: 'ChIJ28jR1RejpBIRTRn51kfhYks', img: 'image/quinto.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/elquinto/', fono: '93 667 74 54', address: 'c/ pallars 173', web: '' });
+            baresP.push({ lat: 41.40234436453319, lng: 2.1975257992744446, bar: 'Little Fern', id: 'ChIJa6oysT2jpBIR3fVfIHbKT-k', img: 'image/fern.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/littlefern/', fono: '603 307 117', address: ' Pere IV 168', web: '' });
+            baresP.push({ lat: 41.40279755963731, lng: 2.204651612890757, bar: 'Nolita Brunch', id: 'ChIJq6oaXUCjpBIR64wPes1ktJo', img: 'image/brunch.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/nolitabrunch/', fono: '93 280 90 59', address: 'carrer de Lull, 230 ', web: '' });
+            baresP.push({ lat: 41.402358447706334, lng: 2.195291519165039, bar: 'Sopa', id: 'ChIJURRcJD2jpBIRWs4qJD3ze3s', img: 'image/sopa.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/sopa/', fono: '93 280 90 59', address: 'Roc Boronat 114', web: '' });
+            baresP.push({ lat: 41.39914909740565, lng: 2.1952463940300504, bar: 'Cafetería Industrial', id: 'ChIJL2kxw7yjpBIRfYmOftP7Zps', img: 'image/industrial.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/cafeteriaindustrial/', fono: '93 300 27 19', address: ' c/ Pallars, 154 ', web: '' });
+            baresP.push({ lat: 41.400898537185796, lng: 2.1998184227581987, bar: 'La Taqueria Poblenou', id: 'ChIJ-_KWtx2jpBIRKF7h5ud3oNU', img: 'image/taqueria.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/lataqueriapoblenou/', fono: '93 485 45 63', address: 'c/ Pujades, 172', web: '' });
+            baresP.push({ lat: 41.40073255300822, lng: 2.1997118049498567, bar: 'Timesburg', id: 'ChIJWZjZGj6jpBIRyx-Ib3BptuE', img: 'image/timesburg.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/timesburg/', fono: '34 93 667 74 54', address: 'Pujades, 168', web: '' });
+            baresP.push({ lat: 41.398336760884284, lng: 2.198448718889267, bar: 'Can Dendê', id: 'ChIJW3zhZRajpBIREKj_RG2OBX0', img: 'image/dende.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/candende/', fono: '603 307 117', address: 'Ciutat de Granada 44', web: '' });
+            baresP.push({ lat: 41.40196612959878, lng: 2.2022169828414917, bar: 'Nabibi Vital Cooking', id: 'ChIJ__Rhuj-jpBIR7ezEFfV4OiM', img: 'image/nabibi.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/nabibi/', fono: ' 931 79 17 57', address: 'Marià Aguiló 61 ', web: 'nabibi.html' });
+            baresP.push({ lat: 41.401760000157886, lng: 2.1960682783626453, bar: 'Catacroquet', id: 'ChIJlc0gDj2jpBIRCeHIKTkV9QQ', img: 'image/catacroquet.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/catacroquet/', fono: '93 280 90 59', address: 'Almogàvers 211', web: '' });
+            baresP.push({ lat: 41.39750899675166, lng: 2.19676075789107, bar: 'Leka', id: 'ChIJ8_vN_RajpBIRZl5Iwmowr5c', img: 'image/leka.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/leka/', fono: '93 300 27 19', address: 'Badajoz 65', web: '' });
+            baresP.push({ lat: 41.39841980177608, lng: 2.1956214190337278, bar: 'Market', id: 'ChIJt7oioxejpBIRyRGWOMn0XaE', img: 'image/market.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/market/', fono: '93 485 45 63', address: 'Badajoz 83', web: '' });
 
             // Las tres variables siguientes, permiten darle un efecto dinamico a los markers e interaccion con el usuario 
             var luz = new google.maps.MarkerImage('image/icoVioleta.png')
@@ -471,17 +475,7 @@
                         title: baresP[i].bar,
                         icon: luz,
                         animation: google.maps.Animation.DROP,
-                        /*label: {
-                            color: '#0000ff',
-                            text: baresP[i].bar,
-                            fontSize: '20px',
-                            fontWeight: '20px',
-                        },*/
-
                     });
-
-
-
                     // Los siguientes eventos 'escuchan' lo que pasa cuando el mouse pasa por los marcadores
                     google.maps.event.addListener(marcas[i], 'mouseover', function () {
                         this.setIcon(luzOver)
@@ -506,12 +500,11 @@
                                 });
                             }
                             //se agrega el contenido html al contenido
-                            infoVent.setContent('<div id="infoWindow"><div id="info-titulo"><h2>' + baresP[i].bar + '</h2></div><div id="info-descp"><p>' + baresP[i].descp + '</p> </div> <div id="info-img"> <p><img src="' + baresP[i].img + '" alt=""></p> </div> <div id="info-cont"> <p> <img class="info-cont-ico" src="image/telefono.png" alt=""> <b></b>' + baresP[i].fono + ' <img class="info-cont-ico"src="image/direccion.png" alt="">' + baresP[i].address + '</p></div><div id="info-map"><p><a id ="mostrarRuta" href="">Mostrar ruta</a></p></div></div>')
+                            infoVent.setContent('<div id="infoWindow"><div id="info-titulo"><h2>' + baresP[i].bar + '</h2></div><div id="info-descp"><p>' + baresP[i].descp + '</p> </div> <div id="info-img"> <p><img src="' + baresP[i].img + '" alt=""></p> </div> <div id="info-cont"> <p> <img class="info-cont-ico" src="image/telefono.png" alt=""> <b></b>' + baresP[i].fono + ' <img class="info-cont-ico"src="image/direccion.png" alt="">' + baresP[i].address + '</p></div><div id="info-map"><p><a id ="mostrarRuta" href="' + baresP[i].web + '">Ir a pagina</a></p></div></div>')
                             infoVent.open(map, marcas[i])
                         });
                     })(i, marcas);
                     extencion.extend(baresP[i])
-
                 };//termina el for
             };
             verMarcas();
@@ -534,7 +527,6 @@
                 };
                 marcaUsuario.setMap(null)
             };
-
             // Parte del codigo que crea rutas
             var option, e
             // Se crea una variable que contralara el elemento 'select' del codigo html
@@ -545,24 +537,24 @@
                 option.value = baresP[e].id; // se le asigna el valor que tendra al option
                 option.text = baresP[e].bar; // el texto que muestra en el menu del select
                 option.id = "hola"; // la clase para luego, de ser necesario, controlarla
-                caja.add(option); // se agrega al select
-
+                caja.add(option);
                 // Este fragmento de codigo ayuda a cambiar de ruta
                 var onCambiarRuta = function () {
                     mostrarRuta(serviceDir, displayDir);
                 };
-
-
+                var onCambiarRutaInfo = function () {
+                    mostrarRutaInfo(serviceDir, displayDir);
+                };
                 // escucha cuando se cambia de ruta
                 document.getElementById('destino').addEventListener('change', onCambiarRuta);
-
-
+                document.getElementById('modo-viaje').addEventListener('change', onCambiarRuta);
                 // se crea el vector de la ruta
                 function mostrarRuta(serviceDir, displayDir) {
+                    var seleeccionModo = document.getElementById('modo-viaje').value;
                     serviceDir.route({
                         origin: new google.maps.LatLng(41.3976537, 2.1941345, 17), // el punto de partida de la ruta
                         destination: { placeId: document.getElementById('destino').value }, // el punto final de la ruta, se uso  el place IDde cada lugar, (se puede reemplazar por un elemento LatLng)
-                        travelMode: 'WALKING' // modo de viaje, en este caso es caminando
+                        travelMode: google.maps.TravelMode[seleeccionModo] // modo de viaje, en este caso es caminando
                     }, function (response, status) {
                         if (status === 'OK') {
                             displayDir.setDirections(response);
@@ -573,11 +565,9 @@
                             window.alert('hay un error en: ' + status)
                         }*/
                     });
-                }
+                };
             };
-
         };
-
         google.maps.event.addDomListener(window, 'load', iniciarMap)
     </script>
 </head>
@@ -602,7 +592,7 @@
     </div>
     <div id="navegacion">
         <p class="nav"><a class="nav-url" href="index.html">Inicio</a></p>
-        <p class="nav"><a class="nav-url" href="restaurant01.html">Restaurantes cerca</a></p>
+        <p class="nav"><a class="nav-url" href="barescerca.html">Restaurantes cerca</a></p>
         <p class="nav"><a class="nav-url" href="contacto.html">Contacto</a></p>
     </div>
     <div id="estructura">
@@ -611,26 +601,29 @@
         </header>
         <div id="seccion">
             <div id="contenido">
-
                 <div id="mapAqui"></div>
                 <div id="menu-flotante">
                     <b>Mostrar ruta</b>
                     <select name="" id="destino">
                         <option value="">Elegir bar</option>
-
                     </select>
                 </div>
-
-
+                <div id="menu-flotante-travel">
+                    <b>Modo de viaje: </b>
+                    <select name="" id="modo-viaje">
+                        <option value="WALKING">Caminando</option>
+                        <option value="DRIVING">Conduciendo</option>
+                        <option value="BICYCLING">Bicicleteando</option>
+                        <option value="TRANSIT">Público</option>
+                    </select>
+                </div>
             </div>
-
+            <footer id="footer">
+                <div id="footer-text">
+                    <p>Derechos Reservados 2019-2020</p>
+                </div>
+            </footer>
         </div>
-        <footer id="footer">
-            <div id="footer-text">
-                <p>Derechos Reservados 2019-2020</p>
-            </div>
-        </footer>
-    </div>
 </body>
 
 </html>
