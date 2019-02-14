@@ -405,14 +405,12 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E38eEb5Z13t02OsR45ejvg7wX_1J-Ks&v=3.exp"></script>
     <script type="text/javascript">
         var marcas = [];
-        var usarioLoc = [];
         var map;
-
         function iniciarMap() {
             var optionMap = {
                 zoom: 17,
                 center: new google.maps.LatLng(41.39933049527024, 2.1970036625316425),
-                //En esta linea se quitan los elementos que pueden hacer ruido en google maps
+                //En esta línea se quitan los elementos que pueden hacer ruido en la interfaz
                 styles: [{
                     "featureType": "poi",
                     "stylers": [
@@ -421,23 +419,19 @@
                 }]
             };
             map = new google.maps.Map(document.getElementById('mapAqui'), optionMap);
-            // Esta linea adapta el zoom segun los marcadores que se van añadiendo
+            // Esta línea adapta el zoom segun los marcadores que se van añadiendo
             var extencion = new google.maps.LatLngBounds();
-
             // DirectionService y DirectionRenderer permiten llamar al servicios de ruta de google maps
             var serviceDir = new google.maps.DirectionsService;
             var displayDir = new google.maps.DirectionsRenderer({
                 // Permite desactivar o activar los markers del sericio de ruta
                 suppressMarkers: false,
                 preserveViewport: true,
-                InfoWindow: 'hola'
-
             });
             //Se agrega el Renderer al mapa
             displayDir.setMap(map);
             // Se crea una variable que contendra una matriz con los datos de los bares. Se deja vacia para luego insertarle datos facilemnte.
             var baresP = [];
-            var usarioLoc = [];
             //con .push se inserta información
             baresP.push({ lat: 41.40288966232697, lng: 2.198766893752577, bar: 'Xorus', id: 'ChIJ0UGVLDyjpBIRdNcVCTidgPs', img: 'image/xorus.jpg', descp: 'HolaPhasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem.<br>  Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/Xorus/', fono: '603 307 117', address: 'calle granada 90', web: 'xorus.html' });
             baresP.push({ lat: 41.3983979113559, lng: 2.204631508368948, bar: 'Blue Bar', id: 'ChIJpa-3z2qjpBIRUW4SwqLY7mk', img: 'image/bluebar.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/bluebar/', fono: '93 280 90 59', address: ' Pallars, 122', web: '' });
@@ -459,8 +453,7 @@
             baresP.push({ lat: 41.401760000157886, lng: 2.1960682783626453, bar: 'Catacroquet', id: 'ChIJlc0gDj2jpBIRCeHIKTkV9QQ', img: 'image/catacroquet.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/catacroquet/', fono: '93 280 90 59', address: 'Almogàvers 211', web: '' });
             baresP.push({ lat: 41.39750899675166, lng: 2.19676075789107, bar: 'Leka', id: 'ChIJ8_vN_RajpBIRZl5Iwmowr5c', img: 'image/leka.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/leka/', fono: '93 300 27 19', address: 'Badajoz 65', web: '' });
             baresP.push({ lat: 41.39841980177608, lng: 2.1956214190337278, bar: 'Market', id: 'ChIJt7oioxejpBIRyRGWOMn0XaE', img: 'image/market.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/market/', fono: '93 485 45 63', address: 'Badajoz 83', web: '' });
-
-            // Las tres variables siguientes, permiten darle un efecto dinamico a los markers e interaccion con el usuario 
+            // Las tres variables siguientes, permiten darle un efecto dinamico a los markers 
             var luz = new google.maps.MarkerImage('image/icoVioleta.png')
             var luzOver = new google.maps.MarkerImage('image/icoPlomo.png')
             var luzClick = new google.maps.MarkerImage('image/icoAzul.png')
@@ -489,8 +482,7 @@
                     google.maps.event.addListener(marcas[i], 'mouseup', function () {
                         this.setIcon(luz)
                     });
-
-                    // se crea una funcion que escuchara cuando se haga click en el marker, y devolvera la ventana de infowindow
+                    // se crea una funcion anonima que escuchara cuando se haga click en el marker, y devolvera la ventana de infowindow
                     (function (i, marcas) {
                         google.maps.event.addListener(marcas[i], 'click', function () {
                             // el simbolo ! comprueba si existe la variable
@@ -499,8 +491,9 @@
                                     disableAutoPan: false
                                 });
                             }
-                            //se agrega el contenido html al contenido
+                            //se agrega el contenido html al infowindow
                             infoVent.setContent('<div id="infoWindow"><div id="info-titulo"><h2>' + baresP[i].bar + '</h2></div><div id="info-descp"><p>' + baresP[i].descp + '</p> </div> <div id="info-img"> <p><img src="' + baresP[i].img + '" alt=""></p> </div> <div id="info-cont"> <p> <img class="info-cont-ico" src="image/telefono.png" alt=""> <b></b>' + baresP[i].fono + ' <img class="info-cont-ico"src="image/direccion.png" alt="">' + baresP[i].address + '</p></div><div id="info-map"><p><a id ="mostrarRuta" href="' + baresP[i].web + '">Ir a pagina</a></p></div></div>')
+                            //se agrega al mapa 
                             infoVent.open(map, marcas[i])
                         });
                     })(i, marcas);
@@ -508,6 +501,7 @@
                 };//termina el for
             };
             verMarcas();
+            //se crea el marker d ela posición del usuario
             var miPosicion = new google.maps.MarkerImage('image/gps-icon.png')
             function ubicacionUsuario() {
                 marcaUsuario = new google.maps.Marker({
@@ -517,10 +511,9 @@
                     icon: miPosicion
                 })
             };
-            ubicacionUsuario();
-
             // Es parte del codigo que ajusta el zoom a cada nuevo marcador que se va agregando
             map.fitBounds(extencion);
+            //limpia los markers al calcular la ruta
             function limpiarMarcas() {
                 for (var i = 0; i < marcas.length; i++) {
                     marcas[i].setMap(null)
@@ -542,19 +535,17 @@
                 var onCambiarRuta = function () {
                     mostrarRuta(serviceDir, displayDir);
                 };
-                var onCambiarRutaInfo = function () {
-                    mostrarRutaInfo(serviceDir, displayDir);
-                };
                 // escucha cuando se cambia de ruta
                 document.getElementById('destino').addEventListener('change', onCambiarRuta);
+                //escucha cuando se cambia el modo de viaje
                 document.getElementById('modo-viaje').addEventListener('change', onCambiarRuta);
                 // se crea el vector de la ruta
                 function mostrarRuta(serviceDir, displayDir) {
-                    var seleeccionModo = document.getElementById('modo-viaje').value;
+                    var seleeccionModo = document.getElementById('modo-viaje').value; //toma el valor que elige el usuario
                     serviceDir.route({
                         origin: new google.maps.LatLng(41.3976537, 2.1941345, 17), // el punto de partida de la ruta
                         destination: { placeId: document.getElementById('destino').value }, // el punto final de la ruta, se uso  el place IDde cada lugar, (se puede reemplazar por un elemento LatLng)
-                        travelMode: google.maps.TravelMode[seleeccionModo] // modo de viaje, en este caso es caminando
+                        travelMode: google.maps.TravelMode[seleeccionModo] // modo de viaje
                     }, function (response, status) {
                         if (status === 'OK') {
                             displayDir.setDirections(response);
