@@ -540,7 +540,7 @@
                 function mostrarRuta(serviceDir, displayDir) {
                     var seleccionModo = document.getElementById('modo-viaje').value; //toma el valor que elige el usuario
                     serviceDir.route({
-                        origin: new google.maps.LatLng(41.3976537, 2.1941345, 17), // el punto de partida de la ruta
+                        origin: new google.maps.LatLng(41.3976537, 2.1941345), // el punto de partida de la ruta
                         destination: { placeId: document.getElementById('destino').value }, // el punto final de la ruta, se uso  el place IDde cada lugar, (se puede reemplazar por un elemento LatLng)
                         travelMode: google.maps.TravelMode[seleccionModo] // modo de viaje
                     }, function (response, status) {
