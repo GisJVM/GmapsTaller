@@ -275,7 +275,7 @@
             position: absolute;
             height: 190px;
             width: 150px;
-            background: chartreuse;
+            background: #4c4c4c;
             top: 45px;
             left: 190px
         }
@@ -359,12 +359,16 @@
 
         #menu-flotante {
             position: absolute;
+            height: 30px;
+            width: 294px;
             top: 160px;
             left: 14px;
             z-index: 5;
-            background: #06a2ff;
+            background: #e3e4e5;
             padding: 5px;
-            font-size: 25px;
+            font-size: 19px;
+            font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            box-shadow: 0 2px 7px 1px #cdcdcd;
         }
 
         #destino {
@@ -373,34 +377,24 @@
 
         #menu-flotante-travel {
             position: absolute;
+            height: 30px;
+            width: 294px;
             z-index: 5;
-            top: 200px;
+            top: 205px;
             left: 14px;
-            background: #06a2ff;
-            font-size: 25px;
+            background: #e3e4e5;
+            font-size: 19px;
             padding: 5px;
+            font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            box-shadow: 0 2px 7px 1px #cdcdcd;
         }
 
         #modo-viaje {
             background: #cdcdcd;
+            
         }
 
-        #panel-prueba {
-            position: absolute;
-            background: transparent;
-            top: 500px;
-            height: 20px;
-        }
-
-        #subimit {
-            color: transparent;
-        }
-
-        #end {
-            outline: transparent;
-            z-index: -10000;
-            border-style: none;
-        }
+        
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E38eEb5Z13t02OsR45ejvg7wX_1J-Ks&v=3.exp"></script>
     <script type="text/javascript">
@@ -421,12 +415,13 @@
             map = new google.maps.Map(document.getElementById('mapAqui'), optionMap);
             // Esta línea adapta el zoom segun los marcadores que se van añadiendo
             var extencion = new google.maps.LatLngBounds();
+            var ajustarpantalla = false;
             // DirectionService y DirectionRenderer permiten llamar al servicios de ruta de google maps
             var serviceDir = new google.maps.DirectionsService;
             var displayDir = new google.maps.DirectionsRenderer({
                 // Permite desactivar o activar los markers del sericio de ruta
                 suppressMarkers: false,
-                preserveViewport: true,
+                preserveViewport: ajustarpantalla,
             });
             //Se agrega el Renderer al mapa
             displayDir.setMap(map);
@@ -511,14 +506,16 @@
                     icon: miPosicion
                 })
             };
+            ubicacionUsuario();
             // Es parte del codigo que ajusta el zoom a cada nuevo marcador que se va agregando
             map.fitBounds(extencion);
             //limpia los markers al calcular la ruta
             function limpiarMarcas() {
+                var mostraraDatos = null
                 for (var i = 0; i < marcas.length; i++) {
                     marcas[i].setMap(null)
                 };
-                marcaUsuario.setMap(null)
+                marcaUsuario.setMap(mostraraDatos)
             };
             // Parte del codigo que crea rutas
             var option, e
@@ -539,13 +536,13 @@
                 document.getElementById('destino').addEventListener('change', onCambiarRuta);
                 //escucha cuando se cambia el modo de viaje
                 document.getElementById('modo-viaje').addEventListener('change', onCambiarRuta);
-                // se crea el vector de la ruta
+                // se crea la funcion que crea el vector de la ruta
                 function mostrarRuta(serviceDir, displayDir) {
-                    var seleeccionModo = document.getElementById('modo-viaje').value; //toma el valor que elige el usuario
+                    var seleccionModo = document.getElementById('modo-viaje').value; //toma el valor que elige el usuario
                     serviceDir.route({
                         origin: new google.maps.LatLng(41.3976537, 2.1941345, 17), // el punto de partida de la ruta
                         destination: { placeId: document.getElementById('destino').value }, // el punto final de la ruta, se uso  el place IDde cada lugar, (se puede reemplazar por un elemento LatLng)
-                        travelMode: google.maps.TravelMode[seleeccionModo] // modo de viaje
+                        travelMode: google.maps.TravelMode[seleccionModo] // modo de viaje
                     }, function (response, status) {
                         if (status === 'OK') {
                             displayDir.setDirections(response);
