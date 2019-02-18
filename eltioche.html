@@ -552,7 +552,7 @@
                                 infoVent = new google.maps.InfoWindow();
                             }
                             //se agrega el contenido html al contenido
-                            infoVent.setContent('<div id="infoWindow"><div id="info-titulo"><h2 id="info-titulo-h2" >' + baresP[i].bar + '</h2></div><div id="info-descp"><p>' + baresP[i].descp + '</p> </div> <div id="info-img"> <p><img src="' + baresP[i].img + '" alt=""></p> </div> <div id="info-cont"> <p> <img class="info-cont-ico" src="image/telefono.png" alt=""> <b></b>' + baresP[i].fono + ' <img class="info-cont-ico"src="image/direccion.png" alt="">' + baresP[i].address + '</p></div><div id="info-map"><p><a id ="mostrarRuta" href="">Mostrar ruta</a></p></div></div>')
+                            infoVent.setContent('<div id="infoWindow"><div id="info-titulo"><h2 id="info-titulo-h2" >' + baresP[i].bar + '</h2></div><div id="info-descp"><p>' + baresP[i].descp + '</p> </div> <div id="info-img"> <p><img src="' + baresP[i].img + '" alt=""></p> </div> <div id="info-cont"> <p> <img class="info-cont-ico" src="image/telefono.png" alt=""> <b></b>' + baresP[i].fono + ' <img class="info-cont-ico"src="image/direccion.png" alt="">' + baresP[i].address + '</p></div><div id="info-map"><p><a id ="mostrarRuta" href="">¡Ven y disfruta!</a></p></div></div>')
                             infoVent.open(map, marcas[i])
                         });
                     })(i, marcas);

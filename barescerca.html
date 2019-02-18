@@ -393,6 +393,19 @@
             background: #cdcdcd;
             
         }
+        #ajustar-ventana {
+            position: absolute;
+            height: 30px;
+            width: 294px;
+            z-index: 5;
+            top: 305px;
+            left: 14px;
+            background: #e3e4e5;
+            font-size: 19px;
+            padding: 5px;
+            font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            box-shadow: 0 2px 7px 1px #cdcdcd;
+        }
 
         
     </style>
@@ -415,13 +428,16 @@
             map = new google.maps.Map(document.getElementById('mapAqui'), optionMap);
             // Esta línea adapta el zoom segun los marcadores que se van añadiendo
             var extencion = new google.maps.LatLngBounds();
-            var ajustarpantalla = false;
+            
+            
+
+            
             // DirectionService y DirectionRenderer permiten llamar al servicios de ruta de google maps
             var serviceDir = new google.maps.DirectionsService;
             var displayDir = new google.maps.DirectionsRenderer({
                 // Permite desactivar o activar los markers del sericio de ruta
                 suppressMarkers: false,
-                preserveViewport: ajustarpantalla,
+                preserveViewport: false,
             });
             //Se agrega el Renderer al mapa
             displayDir.setMap(map);
@@ -499,6 +515,7 @@
             //se crea el marker d ela posición del usuario
             var miPosicion = new google.maps.MarkerImage('image/gps-icon.png')
             function ubicacionUsuario() {
+                
                 marcaUsuario = new google.maps.Marker({
                     position: new google.maps.LatLng(41.3976537, 2.1941345),
                     map: map,
@@ -521,6 +538,7 @@
             var option, e
             // Se crea una variable que contralara el elemento 'select' del codigo html
             var caja = document.getElementById('destino');
+            
             // Con este for se crea los destinos a partir de la matriz de bares
             for (e = 0; e < baresP.length; e++) {
                 option = document.createElement('option'); //se crea el elemento 'option' de los select
@@ -536,9 +554,10 @@
                 document.getElementById('destino').addEventListener('change', onCambiarRuta);
                 //escucha cuando se cambia el modo de viaje
                 document.getElementById('modo-viaje').addEventListener('change', onCambiarRuta);
-                // se crea la funcion que crea el vector de la ruta
+               
                 function mostrarRuta(serviceDir, displayDir) {
                     var seleccionModo = document.getElementById('modo-viaje').value; //toma el valor que elige el usuario
+                     
                     serviceDir.route({
                         origin: new google.maps.LatLng(41.3976537, 2.1941345), // el punto de partida de la ruta
                         destination: { placeId: document.getElementById('destino').value }, // el punto final de la ruta, se uso  el place IDde cada lugar, (se puede reemplazar por un elemento LatLng)
@@ -605,6 +624,7 @@
                         <option value="TRANSIT">Público</option>
                     </select>
                 </div>
+                
             </div>
             <footer id="footer">
                 <div id="footer-text">

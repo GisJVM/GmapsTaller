@@ -1,86 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        #mapAqui {
-            height: 1000px;
-            background: #444444;
-        }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E38eEb5Z13t02OsR45ejvg7wX_1J-Ks&v=3.exp"></script>
-    <script type="text/javascript">
-        var map;
-
-
-        function iniciarMapa() {
-            var mapOptions = {
-                center: new google.maps.LatLng(41.40011918484133, 2.1811294555664062),
-                zoom: 14
-            }
-            map = new google.maps.Map(document.getElementById('mapAqui'), mapOptions);
-            var serviceDir = new google.maps.DirectionsService();
-            var rendererDir = new google.maps.DirectionsRenderer();
-            rendererDir.setMap(map);
-            datosBares = [];
-            datosBares.push({ lat: 41.40067525330128, lng: 2.1936449433712824, bar: 'Xorus', id: 'ChIJ0UGVLDyjpBIRdNcVCTidgPs', img: 'image/xorus.jpg', descp: 'HolaPhasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem.<br>  Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/Xorus/', fono: '603 307 117', address: 'calle granada 90', web: 'xorus.html' });
-            datosBares.push({ lat: 41.39835746426977, lng: 2.1950182343869074, bar: 'Blue Bar', id: 'ChIJpa-3z2qjpBIRUW4SwqLY7mk', img: 'image/bluebar.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/bluebar/', fono: '93 280 90 59', address: ' Pallars, 122', web: '' });
-            datosBares.push({ lat: 41.39822869578879, lng: 2.1989664460568292, bar: 'D9', id: 'ChIJnVDdoRmjpBIR8Ra7Fpj8nxE', img: 'image/d9.jpg', descp: 'Phasellus finibus interdum aliquam. Nulla dignissim turpis id diam suscipit pellentesque. Pellentesque neque diam, laoreet eu arcu quis, porttitor convallis nisl. Donec sed hendrerit purus, sed euismod sem. Aenean sagittis dictum nibh, at rutrum lacus semper eget.', face: 'https://www.facebook.com/LaTavernicola/', fono: '93 667 74 54', address: 'Rambla de Poblenou 44-46', web: '' });
-            var marcas, i;
-            var popVentana = new google.maps.InfoWindow();
-            for (i = 0; i < datosBares.length; i++) {
-                marcas = new google.maps.Marker({
-                    position: new google.maps.LatLng(datosBares[i].lat, datosBares[i].lng),
-                    map: map
-                })
-                google.maps.event.addListener(marcas, 'click', (function(marcas, i){
-                    return function(){
-                        popVentana.setContent(datosBares[i].descp);
-                        popVentana.open(map, marcas)
-                    }
-                })(marcas, i))
-            };
-            var box = document.getElementById('go');
-            var e, opcionesSelector
-            for(e = 0; e < datosBares.length; e++){
-                opcionesSelector = document.createElement('option');
-                opcionesSelector.value = datosBares[e].id;
-                opcionesSelector.text = datosBares[e].bar
-                box.add(opcionesSelector);
-            }
-            var cambiarRuta = function(){
-                mostrarRuta(serviceDir, rendererDir)
-            };
-            document.getElementById('go').addEventListener('change', cambiarRuta);
-            function mostrarRuta(serviceDir,rendererDir){
-                serviceDir.route({
-                    origin: new google.maps.LatLng(41.40011918484133, 2.1811294555664062),
-                    destination: {placeId: document.getElementById('go').value},
-                    travelMode:'WALKING',
-                },function(response, status){
-                    if (status==="OK"){
-                        rendererDir.setDirections(response)
-                    }
-                })
-            }
-
-        };
-        google.maps.event.addDomListener(window, 'load', iniciarMapa)
-    </script>
 </head>
-
 <body>
-    <div id="mapAqui"></div>
-    <div id = "menu-flotante">
-        <select name="" id="go">
-            <option value="">Elige ruta</option>
-        </select>
+    <div>
+        + '<p class="popup-desc"><a href="https://www.altair.es/es/index.php">'+ info.lnk +'</a></p>'
     </div>
-
 </body>
-
 </html>
