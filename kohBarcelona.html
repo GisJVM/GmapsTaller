@@ -530,9 +530,13 @@
                     marcas[i] = new google.maps.Marker({
                         position: new google.maps.LatLng(baresP[i].lat, baresP[i].lng),
                         map: map,
-                        title: "hola",
+                        title: baresP[i].bar,
                         icon: luz,
                         animation: google.maps.Animation.DROP,
+                        label: {text: baresP[i].bar,
+                                fontWeight: 'bold',
+                                fontSize: '20px',
+                                color: '#0000ff'}
                     });
                     // Los siguientes eventos 'escuchan' lo que pasa cuando el mouse pasa por los marcadores
                     google.maps.event.addListener(marcas[i], 'mouseover', function () {
